@@ -6,12 +6,12 @@
     <title>Ella B. Lerasan | Portfolio</title>
     <style>
         :root {
-            --bg-main: #DC9B9B; /* Your main rose pink background */
-            --bg-top-banner: #F6F4E8; /* Soft cream color for the top banner split */
-            --container-bg: #ffffff; /* Clean white card container for sections */
-            --section-bg: #E5EEE4; /* Soft accent highlights */
-            --border-color: #C0E1D2; /* Muted sage-mint for crisp borders */
-            --text-main: #24292f;
+            --bg-main: #DC9B9B; /* The main warm rose background */
+            --bg-glass: #F6F4E8; /* Cream base for cards */
+            --bg-card-inner: #ffffff; 
+            --accent-sage: #C0E1D2; 
+            --accent-mint: #E5EEE4; 
+            --text-dark: #24292f;
             --text-muted: #57606a;
             --accent-green: #2e614a;
         }
@@ -19,125 +19,187 @@
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
             background-color: var(--bg-main);
-            color: var(--text-main);
+            color: var(--text-dark);
             margin: 0;
-            padding: 0 0 60px 0;
+            padding: 0;
             line-height: 1.6;
         }
 
-        /* Hero Banner Section matching the layout concept in image_698164.jpg */
-        .hero-banner {
-            background-color: var(--bg-top-banner);
-            width: 100%;
-            padding: 50px 0;
-            border-bottom: 1px solid var(--border-color);
-            margin-bottom: 40px;
+        /* Modern Floating Navigation Bar for a website feel */
+        .navbar {
+            background-color: rgba(246, 244, 232, 0.95);
+            backdrop-filter: blur(8px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--accent-sage);
+            padding: 15px 0;
         }
 
-        .hero-container {
-            max-width: 850px;
+        .nav-container {
+            max-width: 1000px;
             margin: 0 auto;
-            padding: 0 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 30px;
+        }
+
+        .nav-logo {
+            font-weight: 700;
+            color: var(--accent-green);
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-left: 20px;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--bg-main);
+        }
+
+        /* Large, Dynamic Split Hero Section */
+        .hero-section {
+            background-color: var(--bg-top-banner);
+            background: linear-gradient(180deg, var(--bg-glass) 0%, rgba(246, 244, 232, 0.8) 100%);
+            padding: 80px 0;
+            border-bottom: 2px solid var(--accent-sage);
+        }
+
+        .hero-layout {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 30px;
             display: flex;
             align-items: center;
-            gap: 30px;
+            justify-content: space-between;
+            gap: 40px;
         }
 
-        @media (max-width: 600px) {
-            .hero-container {
+        @media (max-width: 768px) {
+            .hero-layout {
                 flex-direction: column-reverse;
                 text-align: center;
+                padding: 0 20px;
             }
         }
 
-        .profile-text {
-            flex: 1;
+        .hero-text h1 {
+            font-size: 2.8rem;
+            margin: 0 0 10px 0;
+            font-weight: 800;
+            letter-spacing: -0.5px;
         }
 
-        /* Custom Arch Image Frame inspired by image_698164.jpg */
-        .profile-img-arch {
-            width: 160px;
-            height: 220px;
-            border-radius: 100px 100px 0 0; /* Smooth arch cut curve */
-            overflow: hidden;
-            border: 4px solid var(--bg-main);
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
-            flex-shrink: 0;
+        .hero-text .title-sub {
+            font-size: 1.3rem;
+            color: var(--accent-green);
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .meta-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .meta-tag {
             background-color: #ffffff;
+            border: 1px solid var(--accent-sage);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-weight: 500;
         }
 
-        .profile-img-arch img {
+        /* Circular Portrait Drop Shadow Frame */
+        .hero-avatar {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 5px solid #ffffff;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+            flex-shrink: 0;
+            transition: transform 0.3s ease;
+        }
+
+        .hero-avatar:hover {
+            transform: scale(1.03);
+        }
+
+        .hero-avatar img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
 
-        /* Main Content Cards matching layout in image_698128.jpg */
-        .content-container {
-            max-width: 850px;
-            margin: 0 auto;
-            padding: 0 20px;
+        /* Grid-Based Layout Container */
+        .main-content {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 30px;
             box-sizing: border-box;
         }
 
-        .section-card {
-            background-color: var(--container-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
+        /* Distinct, Floating Web Cards */
+        .portfolio-card {
+            background-color: var(--bg-glass);
+            border: 1px solid var(--accent-sage);
+            border-radius: 12px;
             padding: 40px;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            margin-bottom: 35px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        h1 {
-            color: var(--text-main);
-            font-size: 2.4rem;
-            margin: 0 0 8px 0;
-            font-weight: 700;
+        .portfolio-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
         }
 
-        h2 {
-            color: var(--text-main);
-            font-size: 1.4rem;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 8px;
+        .portfolio-card h2 {
+            font-size: 1.5rem;
+            color: var(--text-dark);
             margin-top: 0;
-            margin-bottom: 20px;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
-        .title-sub {
-            font-size: 1.2rem;
-            color: var(--accent-green);
-            font-weight: 600;
-            margin: 0 0 16px 0;
+        .about-text {
+            font-size: 1.05rem;
+            color: #333a41;
+            line-height: 1.7;
         }
 
-        .meta-info {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-        }
-
-        .meta-info span {
-            margin-right: 18px;
-            display: inline-block;
-        }
-
-        .project-block {
-            border: 1px solid var(--border-color);
+        /* Project Display Blocks inside Portfolio Cards */
+        .project-showcase {
+            background-color: var(--bg-card-inner);
+            border: 1px solid var(--accent-sage);
             border-radius: 8px;
             padding: 24px;
             margin-bottom: 24px;
-            background-color: #ffffff;
         }
 
-        .project-block:last-child {
+        .project-showcase:last-child {
             margin-bottom: 0;
         }
 
-        .project-block h3 {
-            margin: 0 0 10px 0;
-            color: var(--text-main);
-            font-size: 1.25rem;
+        .project-showcase h3 {
+            margin: 0 0 8px 0;
+            font-size: 1.3rem;
+            color: var(--text-dark);
         }
 
         .badge {
@@ -145,108 +207,137 @@
             font-size: 0.75rem;
             font-weight: 600;
             padding: 4px 12px;
-            border-radius: 20px;
-            background-color: var(--section-bg);
+            border-radius: 4px;
+            background-color: var(--accent-mint);
             color: var(--accent-green);
             margin-bottom: 14px;
-            border: 1px solid var(--border-color);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
+        /* High-End Image Grid Arrangements */
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 16px;
-            margin-top: 18px;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
         }
 
         .gallery-item {
-            border: 1px solid var(--border-color);
-            border-radius: 6px;
+            border: 1px solid var(--accent-sage);
+            border-radius: 8px;
             overflow: hidden;
             background: #ffffff;
+            transition: transform 0.2s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.01);
         }
 
         .gallery-item img {
             width: 100%;
-            height: 150px;
+            height: 160px;
             object-fit: cover;
             display: block;
         }
 
         .gallery-caption {
-            padding: 8px;
-            font-size: 0.8rem;
+            padding: 12px;
+            font-size: 0.85rem;
             color: var(--text-muted);
             text-align: center;
-            border-top: 1px solid var(--border-color);
-            background-color: var(--bg-top-banner);
+            border-top: 1px solid var(--accent-sage);
+            background-color: var(--bg-glass);
+            font-weight: 500;
         }
 
-        .skills-grid {
+        /* Modern Skill Pill Layout */
+        .skills-flex {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 12px;
         }
 
-        .skill-tag {
-            background-color: var(--section-bg);
-            border: 1px solid var(--border-color);
-            padding: 6px 14px;
-            border-radius: 6px;
-            font-size: 0.85rem;
+        .skill-pill {
+            background-color: var(--bg-card-inner);
+            border: 1px solid var(--accent-sage);
+            padding: 8px 18px;
+            border-radius: 8px;
+            font-size: 0.9rem;
             color: var(--accent-green);
             font-weight: 600;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            transition: all 0.2s ease;
+        }
+
+        .skill-pill:hover {
+            background-color: var(--accent-mint);
+            transform: translateY(-2px);
         }
 
         footer {
             text-align: center;
-            margin-top: 40px;
+            padding: 40px 20px;
             font-size: 0.85rem;
             color: #ffffff;
+            letter-spacing: 0.5px;
         }
         
-        .repo-link {
-            color: var(--bg-top-banner);
-            text-decoration: underline;
+        .footer-link {
+            color: var(--bg-glass);
+            text-decoration: none;
             font-weight: 600;
+            border-bottom: 1px dashed var(--bg-glass);
         }
     </style>
 </head>
 <body>
 
-<!-- Top split banner section matching image_698164.jpg scheme -->
-<div class="hero-banner">
-    <div class="hero-container">
-        <div class="profile-text">
+<!-- Interactive Portfolio Navigation Head -->
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="nav-logo">ELLA.IS</div>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#capabilities">Skills</a>
+        </div>
+    </div>
+</nav>
+
+<!-- Clean Split Hero Header -->
+<header class="hero-section">
+    <div class="hero-layout">
+        <div class="hero-text">
             <h1>Ella B. Lerasan</h1>
             <div class="title-sub">Information Systems Professional & Systems Analyst</div>
-            <div class="meta-info">
-                <span>📍 Panabo City, Davao Region</span>
-                <span>🎓 Davao del Norte State College</span>
-                <span>📚 3rd Year BSIS</span>
+            <div class="meta-tags">
+                <div class="meta-tag">📍 Panabo City, Davao Region</div>
+                <div class="meta-tag">🎓 Davao del Norte State College</div>
+                <div class="meta-tag">📚 3rd Year BSIS</div>
             </div>
         </div>
-        <!-- Beautiful Arch profile frame structure applied here -->
-        <div class="profile-img-arch">
+        <div class="hero-avatar">
             <img src="ELLA.jpg" alt="Ella B. Lerasan Portrait">
         </div>
     </div>
-</div>
+</header>
 
-<div class="content-container">
-    <!-- About Section Card -->
-    <div class="section-card">
-        <h2>👨‍💻 About Me</h2>
-        <p>
+<main class="main-content">
+    <!-- About Section Card Layout -->
+    <section id="about" class="portfolio-card">
+        <h2>💻 About Me</h2>
+        <div class="about-text">
             I am a dedicated Information Systems student who thrives on designing, optimizing, and building systems that directly solve operational complexities. With a strong foundation in database relationships, field documentation, and stakeholder coordination, my goal is to deliver clean, maintainable, and highly effective software platforms.
-        </p>
-    </div>
+        </div>
+    </section>
 
-    <!-- Experience / Projects Card -->
-    <div class="section-card">
-        <h2>🚀 Core Projects & Field Experience</h2>
+    <!-- Projects Section Card Layout -->
+    <section id="projects" class="portfolio-card">
+        <h2>✨ Core Projects & Field Experience</h2>
 
-        <div class="project-block">
+        <div class="project-showcase">
             <h3>Proveya / Jobify</h3>
             <div class="badge">Startup Sundayag 2025 Innovator</div>
             <p>A web-based platform targeting employment mismatch and accessibility. Designed to offer structured, fair, and verified job access channels for local job hunters and enterprises alike.</p>
@@ -254,16 +345,16 @@
             <div class="gallery-grid">
                 <div class="gallery-item">
                     <img src="6b51537a-0c61-4f35-ae49-4c752ad4aaee.jpg" alt="Startup Presentation">
-                    <div class="gallery-caption">Project Pitching</div>
+                    <div class="gallery-caption">Project Pitching Overview</div>
                 </div>
                 <div class="gallery-item">
                     <img src="ebb74b49-1aef-47e1-b464-8a9f2563cd02.jpg" alt="Team Certificate Presentation">
-                    <div class="gallery-caption">Award Ceremony</div>
+                    <div class="gallery-caption">Award Ceremony Recognition</div>
                 </div>
             </div>
         </div>
 
-        <div class="project-block">
+        <div class="project-showcase">
             <h3>DMW XI Inventory Management System</h3>
             <div class="badge">Government Unit Collaboration</div>
             <p>Developed to modernize property asset tracking mechanics at the Department of Migrant Workers Regional Office XI. Features integrated asset assignment mechanisms with instant PAR and ICS reporting.</p>
@@ -271,29 +362,29 @@
             <div class="gallery-grid">
                 <div class="gallery-item">
                     <img src="2fadfe57-cdeb-4693-b0a0-e91cd2c2745f.jpg" alt="Field Deployment at DMW Office XI">
-                    <div class="gallery-caption">DMW Regional Office XI</div>
+                    <div class="gallery-caption">DMW Regional Office XI Field Immersion</div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- Technical Capabilities Card -->
-    <div class="section-card">
-        <h2>🛠 Technical Capabilities</h2>
-        <div class="skills-grid">
-            <div class="skill-tag">Systems Analysis & Design</div>
-            <div class="skill-tag">Database Architecture (SQL & ERD)</div>
-            <div class="skill-tag">Python Development</div>
-            <div class="skill-tag">Web Platforms (HTML, CSS, JS)</div>
-            <div class="skill-tag">IEEE Standards Documentation</div>
-            <div class="skill-tag">Agile Development Workflows</div>
+    <!-- Technical Capabilities Card Layout -->
+    <section id="capabilities" class="portfolio-card">
+        <h2>🚀 Technical Capabilities</h2>
+        <div class="skills-flex">
+            <div class="skill-pill">Systems Analysis & Design</div>
+            <div class="skill-pill">Database Architecture (SQL & ERD)</div>
+            <div class="skill-pill">Python Development</div>
+            <div class="skill-pill">Web Platforms (HTML, CSS, JS)</div>
+            <div class="skill-pill">IEEE Standards Documentation</div>
+            <div class="skill-pill">Agile Development Workflows</div>
         </div>
-    </div>
+    </section>
+</main>
 
-    <footer>
-        <p>&copy; 2026 Ella B. Lerasan. Live Portfolio hosted at <a class="repo-link" href="https://github.com/sarahjeandayagro-oss/ellagithub-portfolio" target="_blank">ellagithub-portfolio</a>.</p>
-    </footer>
-</div>
+<footer>
+    <p>&copy; 2026 Ella B. Lerasan. Live Platform hosted via <a class="footer-link" href="https://github.com/sarahjeandayagro-oss/ellagithub-portfolio" target="_blank">ellagithub-portfolio</a>.</p>
+</footer>
 
 </body>
 </html>
