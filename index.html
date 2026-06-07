@@ -6,20 +6,20 @@
     <title>Ella B. Lerasan | Portfolio</title>
     <style>
         :root {
-            --bg-color: #FCF8F8; /* Softest pink background */
+            --bg-color: #FCF8F8; /* Lightest blush background from image context */
             --container-bg: #ffffff;
-            --section-bg: #FBEFEF; /* Soft pink block shading */
-            --border-color: #F9DFDF; /* Medium blush borders */
-            --accent-rose: #F5AFAF; /* Darker blush accent tone */
-            --text-main: #6b3e3e; /* Deep rose-brown for high-contrast, professional text readability */
-            --text-body: #4a3b3b;
-            --card-bg: #fffefe;
+            --section-bg: #FBEFEF; /* Soft pink accents */
+            --border-color: #F9DFDF; /* Border highlight pink */
+            --accent-rose: #F5AFAF; /* Darker blush contrast element */
+            --text-main: #24292f;
+            --text-muted: #57606a;
+            --accent-blue: #0969da;
         }
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
             background-color: var(--bg-color);
-            color: var(--text-body);
+            color: var(--text-main);
             margin: 0;
             padding: 40px 20px;
             line-height: 1.6;
@@ -29,17 +29,17 @@
             max-width: 850px;
             margin: 0 auto;
             background-color: var(--container-bg);
-            border: 2px solid var(--border-color);
-            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
             padding: 40px;
-            box-shadow: 0 6px 16px rgba(245, 175, 175, 0.1);
+            box-shadow: 0 4px 12px rgba(245, 175, 175, 0.15);
         }
 
         .profile-section {
             display: flex;
             align-items: center;
             gap: 30px;
-            border-bottom: 2px dashed var(--border-color);
+            border-bottom: 1px solid var(--border-color);
             padding-bottom: 30px;
             margin-bottom: 30px;
         }
@@ -58,11 +58,10 @@
         .profile-img-container {
             width: 150px;
             height: 150px;
-            border-radius: 16px;
+            border-radius: 50%; /* Circular profile layout restored from image_698924.jpg */
             overflow: hidden;
-            border: 3px solid var(--accent-rose);
+            border: 3px solid var(--border-color);
             flex-shrink: 0;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
         }
 
         .profile-img-container img {
@@ -73,108 +72,90 @@
 
         h1 {
             color: var(--text-main);
-            font-size: 2.4rem;
+            font-size: 2.2rem;
             margin: 0 0 8px 0;
-            font-weight: 800;
         }
 
         h2 {
             color: var(--text-main);
             font-size: 1.4rem;
-            border-bottom: 2px solid var(--accent-rose);
-            padding-bottom: 6px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 8px;
             margin-top: 40px;
             margin-bottom: 20px;
-            display: inline-block;
         }
 
         .title-sub {
-            font-size: 1.2rem;
-            color: var(--text-main);
+            font-size: 1.15rem;
+            color: var(--accent-blue);
             font-weight: 600;
             margin: 0 0 12px 0;
         }
 
         .meta-info {
             font-size: 0.9rem;
-            color: var(--text-body);
-            background-color: var(--section-bg);
-            padding: 8px 14px;
-            border-radius: 6px;
-            display: inline-block;
-            border: 1px solid var(--border-color);
+            color: var(--text-muted);
         }
 
         .meta-info span {
             margin-right: 15px;
-        }
-
-        .meta-info span:last-child {
-            margin-right: 0;
+            display: inline-block;
         }
 
         .project-card {
-            background-color: var(--card-bg);
+            background-color: #ffffff;
             border: 1px solid var(--border-color);
-            border-left: 5px solid var(--accent-rose); /* Beautiful thick pink accent bar on the left */
             border-radius: 8px;
             padding: 24px;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
 
         .project-card h3 {
             margin: 0 0 10px 0;
             color: var(--text-main);
-            font-size: 1.25rem;
+            font-size: 1.2rem;
         }
 
         .badge {
             display: inline-block;
             font-size: 0.75rem;
-            font-weight: 700;
-            padding: 4px 12px;
-            border-radius: 4px;
-            background-color: var(--accent-rose);
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 20px;
+            background-color: var(--section-bg);
             color: var(--text-main);
             margin-bottom: 12px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+            border: 1px solid var(--border-color);
         }
 
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 16px;
-            margin-top: 18px;
+            margin-top: 15px;
         }
 
         .gallery-item {
             border: 1px solid var(--border-color);
-            border-radius: 8px;
+            border-radius: 6px;
             overflow: hidden;
-            background: #ffffff;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.01);
+            background: #fff;
         }
 
         .gallery-item img {
             width: 100%;
-            height: 160px;
+            height: 150px;
             object-fit: cover;
             display: block;
         }
 
         .gallery-caption {
-            padding: 10px;
+            padding: 8px;
             font-size: 0.8rem;
-            color: var(--text-body);
-            font-weight: 500;
+            color: var(--text-muted);
             text-align: center;
-            background-color: var(--section-bg);
             border-top: 1px solid var(--border-color);
-        }
-
-        .skills-grid {
-            margin-top: 15px;
+            background-color: var(--bg-color);
         }
 
         .skill-tag {
@@ -185,28 +166,27 @@
             border-radius: 6px;
             font-size: 0.85rem;
             margin-right: 8px;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             color: var(--text-main);
-            font-weight: 600;
+            font-weight: 500;
         }
 
         footer {
             text-align: center;
             margin-top: 50px;
             font-size: 0.85rem;
-            color: var(--text-body);
-            border-top: 2px dashed var(--border-color);
+            color: var(--text-muted);
+            border-top: 1px solid var(--border-color);
             padding-top: 24px;
         }
         
         .repo-link {
-            color: var(--text-main);
+            color: var(--accent-blue);
             text-decoration: none;
-            font-weight: 700;
-            border-bottom: 1px solid var(--accent-rose);
+            font-weight: 500;
         }
         .repo-link:hover {
-            background-color: var(--section-bg);
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -228,57 +208,51 @@
         </div>
     </div>
 
-    <div>
-        <h2>👨‍💻 About Me</h2>
-        <p>
-            I am a dedicated Information Systems student who thrives on designing, optimizing, and building systems that directly solve operational complexities. With a strong foundation in database relationships, field documentation, and stakeholder coordination, my goal is to deliver clean, maintainable, and highly effective software platforms.
-        </p>
-    </div>
+    <h2>👨‍💻 About Me</h2>
+    <p>
+        I am a dedicated Information Systems student who thrives on designing, optimizing, and building systems that directly solve operational complexities. With a strong foundation in database relationships, field documentation, and stakeholder coordination, my goal is to deliver clean, maintainable, and highly effective software platforms.
+    </p>
 
-    <div>
-        <h2>🚀 Core Projects & Field Experience</h2>
+    <h2>🚀 Core Projects & Field Experience</h2>
 
-        <div class="project-card">
-            <h3>Proveya / Jobify</h3>
-            <div class="badge">Startup Sundayag 2025 Innovator</div>
-            <p>A web-based platform targeting employment mismatch and accessibility. Designed to offer structured, fair, and verified job access channels for local job hunters and enterprises alike.</p>
-            
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="6b51537a-0c61-4f35-ae49-4c752ad4aaee.jpg" alt="Startup Presentation">
-                    <div class="gallery-caption">Project Pitching</div>
-                </div>
-                <div class="gallery-item">
-                    <img src="ebb74b49-1aef-47e1-b464-8a9f2563cd02.jpg" alt="Team Certificate Presentation">
-                    <div class="gallery-caption">Award Ceremony</div>
-                </div>
+    <div class="project-card">
+        <h3>Proveya / Jobify</h3>
+        <div class="badge">Startup Sundayag 2025 Innovator</div>
+        <p>A web-based platform targeting employment mismatch and accessibility. Designed to offer structured, fair, and verified job access channels for local job hunters and enterprises alike.</p>
+        
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="6b51537a-0c61-4f35-ae49-4c752ad4aaee.jpg" alt="Startup Presentation">
+                <div class="gallery-caption">Project Pitching</div>
             </div>
-        </div>
-
-        <div class="project-card">
-            <h3>DMW XI Inventory Management System</h3>
-            <div class="badge">Government Unit Collaboration</div>
-            <p>Developed to modernize property asset tracking mechanics at the Department of Migrant Workers Regional Office XI. Features integrated asset assignment mechanisms with instant PAR and ICS reporting.</p>
-            
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="2fadfe57-cdeb-4693-b0a0-e91cd2c2745f.jpg" alt="Field Deployment at DMW Office XI">
-                    <div class="gallery-caption">DMW Regional Office XI</div>
-                </div>
+            <div class="gallery-item">
+                <img src="ebb74b49-1aef-47e1-b464-8a9f2563cd02.jpg" alt="Team Certificate Presentation">
+                <div class="gallery-caption">Award Ceremony</div>
             </div>
         </div>
     </div>
 
-    <div>
-        <h2>🛠 Technical Capabilities</h2>
-        <div class="skills-grid">
-            <div class="skill-tag">Systems Analysis & Design</div>
-            <div class="skill-tag">Database Architecture (SQL & ERD)</div>
-            <div class="skill-tag">Python Development</div>
-            <div class="skill-tag">Web Platforms (HTML, CSS, JS)</div>
-            <div class="skill-tag">IEEE Standards Documentation</div>
-            <div class="skill-tag">Agile Development Workflows</div>
+    <div class="project-card">
+        <h3>DMW XI Inventory Management System</h3>
+        <div class="badge">Government Unit Collaboration</div>
+        <p>Developed to modernize property asset tracking mechanics at the Department of Migrant Workers Regional Office XI. Features integrated asset assignment mechanisms with instant PAR and ICS reporting.</p>
+        
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="2fadfe57-cdeb-4693-b0a0-e91cd2c2745f.jpg" alt="Field Deployment at DMW Office XI">
+                <div class="gallery-caption">DMW Regional Office XI</div>
+            </div>
         </div>
+    </div>
+
+    <h2>🛠 Technical Capabilities</h2>
+    <div class="skills-grid">
+        <div class="skill-tag">Systems Analysis & Design</div>
+        <div class="skill-tag">Database Architecture (SQL & ERD)</div>
+        <div class="skill-tag">Python Development</div>
+        <div class="skill-tag">Web Platforms (HTML, CSS, JS)</div>
+        <div class="skill-tag">IEEE Standards Documentation</div>
+        <div class="skill-tag">Agile Development Workflows</div>
     </div>
 
     <footer>
