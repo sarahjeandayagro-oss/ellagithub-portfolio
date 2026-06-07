@@ -6,15 +6,14 @@
     <title>Ella B. Lerasan | Portfolio</title>
     <style>
         :root {
-            --bg-color: #f0f7f4; /* Soft, clean mint tint */
+            --bg-color: #FCF8F8; /* Softest pink background */
             --container-bg: #ffffff;
-            --section-bg: #e8f5e9; /* Light green block shading */
-            --border-color: #c8e6c9; /* Soft green borders */
-            --text-main: #1b5e20; /* Deep forest green for text contrast */
-            --text-body: #2e3d30;
-            --accent-emerald: #2e7d32;
-            --accent-mint: #a1dfb1;
-            --card-bg: #f9fbf9;
+            --section-bg: #FBEFEF; /* Soft pink block shading */
+            --border-color: #F9DFDF; /* Medium blush borders */
+            --accent-rose: #F5AFAF; /* Darker blush accent tone */
+            --text-main: #6b3e3e; /* Deep rose-brown for high-contrast, professional text readability */
+            --text-body: #4a3b3b;
+            --card-bg: #fffefe;
         }
 
         body {
@@ -33,7 +32,7 @@
             border: 2px solid var(--border-color);
             border-radius: 12px;
             padding: 40px;
-            box-shadow: 0 6px 16px rgba(27, 94, 32, 0.05);
+            box-shadow: 0 6px 16px rgba(245, 175, 175, 0.1);
         }
 
         .profile-section {
@@ -59,11 +58,11 @@
         .profile-img-container {
             width: 150px;
             height: 150px;
-            border-radius: 16px; /* Elegant rounded corner instead of circle */
+            border-radius: 16px;
             overflow: hidden;
-            border: 3px solid var(--accent-emerald);
+            border: 3px solid var(--accent-rose);
             flex-shrink: 0;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
         }
 
         .profile-img-container img {
@@ -82,7 +81,7 @@
         h2 {
             color: var(--text-main);
             font-size: 1.4rem;
-            border-bottom: 2px solid var(--accent-emerald);
+            border-bottom: 2px solid var(--accent-rose);
             padding-bottom: 6px;
             margin-top: 40px;
             margin-bottom: 20px;
@@ -91,7 +90,7 @@
 
         .title-sub {
             font-size: 1.2rem;
-            color: var(--accent-emerald);
+            color: var(--text-main);
             font-weight: 600;
             margin: 0 0 12px 0;
         }
@@ -103,6 +102,7 @@
             padding: 8px 14px;
             border-radius: 6px;
             display: inline-block;
+            border: 1px solid var(--border-color);
         }
 
         .meta-info span {
@@ -116,7 +116,7 @@
         .project-card {
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
-            border-left: 5px solid var(--accent-emerald); /* Highlight accent bar */
+            border-left: 5px solid var(--accent-rose); /* Beautiful thick pink accent bar on the left */
             border-radius: 8px;
             padding: 24px;
             margin-bottom: 25px;
@@ -134,8 +134,8 @@
             font-weight: 700;
             padding: 4px 12px;
             border-radius: 4px;
-            background-color: var(--accent-emerald);
-            color: #ffffff;
+            background-color: var(--accent-rose);
+            color: var(--text-main);
             margin-bottom: 12px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
@@ -153,7 +153,7 @@
             border-radius: 8px;
             overflow: hidden;
             background: #ffffff;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.01);
         }
 
         .gallery-item img {
@@ -169,7 +169,7 @@
             color: var(--text-body);
             font-weight: 500;
             text-align: center;
-            background-color: var(--card-bg);
+            background-color: var(--section-bg);
             border-top: 1px solid var(--border-color);
         }
 
@@ -200,12 +200,13 @@
         }
         
         .repo-link {
-            color: var(--accent-emerald);
+            color: var(--text-main);
             text-decoration: none;
             font-weight: 700;
+            border-bottom: 1px solid var(--accent-rose);
         }
         .repo-link:hover {
-            text-decoration: underline;
+            background-color: var(--section-bg);
         }
     </style>
 </head>
