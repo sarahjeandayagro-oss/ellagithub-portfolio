@@ -3,401 +3,494 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ella B. Lerasan | Professional Portfolio</title>
+    <title>Ella B. Lerasan | Portfolio</title>
     <style>
         :root {
-            --bg-main: #DC9B9B; /* Premium Matte Rose Background */
-            --bg-banner: #F6F4E8; /* Silk Cream Contrast Section */
-            --container-bg: #ffffff; /* pure white structural sheets */
-            --section-bg: #E5EEE4; /* Smooth sage structural tint */
-            --border-color: #C0E1D2; /* Clean alignment sage-mint border line */
-            --text-dark: #1a1d20;
-            --text-muted: #495057;
-            --accent-green: #214d3a;
-            --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.04);
-            --shadow-md: 0 12px 30px rgba(0, 0, 0, 0.08);
-            --shadow-lg: 0 24px 50px rgba(0, 0, 0, 0.25);
+            --bg-dark: #09070f;
+            --bg-gradient: radial-gradient(circle at 80% 20%, #1a1230 0%, #09070f 70%);
+            --card-bg: rgba(20, 16, 32, 0.6);
+            --card-border: rgba(147, 112, 219, 0.15);
+            --card-border-glow: rgba(147, 112, 219, 0.4);
+            --purple-glow: #9b70ff;
+            --text-white: #ffffff;
+            --text-muted: #8b8599;
+            --badge-bg: rgba(155, 112, 255, 0.12);
         }
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--bg-main);
-            color: var(--text-dark);
+            background: var(--bg-dark);
+            background: var(--bg-gradient);
+            color: var(--text-white);
             margin: 0;
-            padding: 0 0 80px 0;
-            line-height: 1.65;
-            -webkit-font-smoothing: antialiased;
+            padding: 0;
+            line-height: 1.6;
+            scroll-behavior: smooth;
         }
 
         /* ------------------------------------
-           1. PREMIUM HERO SECTION
+           NAVIGATION BAR (image_5b0126.jpg)
         ------------------------------------ */
-        .hero-banner {
-            background-color: var(--bg-banner);
-            width: 100%;
-            padding: 65px 0;
-            border-bottom: 1px solid var(--border-color);
-            position: relative;
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 6%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(9, 7, 15, 0.8);
+            backdrop-filter: blur(12px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
         }
 
-        .hero-container {
-            max-width: 950px;
+        .nav-logo {
+            font-size: 1.4rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            background: linear-gradient(45deg, #ffffff, var(--purple-glow));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-left: 30px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--text-white);
+        }
+
+        /* ------------------------------------
+           HERO SECTION (image_5b0126.jpg)
+        ------------------------------------ */
+        .hero {
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 0 40px;
+            padding: 180px 40px 100px 40px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 40px;
+            gap: 60px;
+            min-height: 70vh;
+            box-sizing: border-box;
         }
 
-        @media (max-width: 768px) {
-            .hero-container {
+        @media (max-width: 900px) {
+            .hero {
                 flex-direction: column-reverse;
                 text-align: center;
-                padding: 0 24px;
+                padding-top: 140px;
             }
         }
 
-        .profile-text {
+        .hero-content {
             flex: 1;
+            max-width: 600px;
         }
 
-        h1 {
-            color: var(--text-dark);
-            font-size: 2.6rem;
-            margin: 0 0 10px 0;
+        .hero-pre {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: var(--purple-glow);
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
             font-weight: 800;
-            letter-spacing: -0.5px;
-        }
-
-        .title-sub {
-            font-size: 1.25rem;
-            color: var(--accent-green);
-            font-weight: 600;
+            line-height: 1.1;
             margin: 0 0 20px 0;
-            letter-spacing: -0.2px;
+            letter-spacing: -1px;
         }
 
-        .meta-info {
-            font-size: 0.9rem;
+        .hero-content h1 span {
+            display: block;
+            color: var(--purple-glow);
+            background: linear-gradient(to right, #bca1ff, #7b4eff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-p {
+            font-size: 1.05rem;
             color: var(--text-muted);
+            margin-bottom: 35px;
+        }
+
+        .hero-btns {
             display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
+            gap: 15px;
         }
 
-        .meta-info span {
-            display: inline-flex;
+        @media (max-width: 900px) {
+            .hero-btns {
+                justify-content: center;
+            }
+        }
+
+        .btn-primary {
+            background: var(--purple-glow);
+            color: var(--text-white);
+            border: none;
+            padding: 14px 30px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border-radius: 30px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            opacity: 0.9;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-white);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 14px 30px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border-radius: 30px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.3s ease, border-color 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        /* Glowing circular photo orb frame */
+        .hero-avatar-frame {
+            position: relative;
+            width: 320px;
+            height: 320px;
+            border-radius: 50%;
+            border: 2px solid rgba(155, 112, 255, 0.3);
+            display: flex;
+            justify-content: center;
             align-items: center;
-            font-weight: 500;
+            flex-shrink: 0;
+            box-shadow: 0 0 40px rgba(155, 112, 255, 0.08);
         }
 
-        .profile-img-circle {
-            width: 160px;
-            height: 160px;
+        .hero-avatar-inner {
+            width: 290px;
+            height: 290px;
             border-radius: 50%;
             overflow: hidden;
-            border: 4px solid #ffffff;
-            box-shadow: var(--shadow-md);
-            flex-shrink: 0;
-            background-color: #ffffff;
-            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            background: #110e1a;
         }
 
-        .profile-img-circle:hover {
-            transform: scale(1.04);
-        }
-
-        .profile-img-circle img {
+        .hero-avatar-inner img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
 
-        /* Content framing grids */
-        .content-container {
-            max-width: 950px;
-            margin: 50px auto 0 auto;
-            padding: 0 40px;
+        /* ------------------------------------
+           ACADEMIC TIMELINE NAVIGATION (image_5b0108.jpg)
+        ------------------------------------ */
+        .timeline-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 40px;
             box-sizing: border-box;
         }
 
-        @media (max-width: 768px) {
-            .content-container {
-                padding: 0 24px;
-            }
+        .timeline-nav {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 60px;
         }
 
-        .section-card {
-            background-color: var(--container-bg);
-            border: 1px solid rgba(0, 0, 0, 0.05);
+        .timeline-tab {
+            background: rgba(20, 16, 32, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.05);
             border-radius: 12px;
-            padding: 40px;
-            margin-bottom: 45px;
-            box-shadow: var(--shadow-md);
+            padding: 20px;
+            text-align: center;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: all 0.3s ease;
         }
 
-        h2 {
-            color: var(--text-dark);
-            font-size: 1.5rem;
+        .timeline-tab.active {
+            border-color: var(--card-border-glow);
+            color: var(--purple-glow);
+            background: rgba(155, 112, 255, 0.05);
+            box-shadow: 0 0 20px rgba(155, 112, 255, 0.05);
+        }
+
+        /* ------------------------------------
+           PROJECT CARDS GRID (image_5b0108.jpg, image_5b0103.jpg, image_5b00ea.jpg)
+        ------------------------------------ */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .project-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--card-border-glow);
+        }
+
+        .card-img-holder {
+            width: 100%;
+            height: 210px;
+            background: #120f1d;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+        }
+
+        .card-img-holder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: 25px;
+        }
+
+        .card-badge {
+            display: inline-block;
+            font-size: 0.7rem;
             font-weight: 700;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 12px;
-            margin-top: 0;
-            margin-bottom: 24px;
-            letter-spacing: -0.3px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--purple-glow);
+            background: var(--badge-bg);
+            padding: 4px 12px;
+            border-radius: 6px;
+            margin-bottom: 15px;
         }
 
-        .card-p {
-            font-size: 1.05rem;
-            color: rgba(0, 0, 0, 0.75);
+        .card-body h3 {
+            font-size: 1.25rem;
+            margin: 0 0 10px 0;
+            font-weight: 700;
+            color: var(--text-white);
+        }
+
+        .card-body p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
             margin: 0;
         }
 
         /* ------------------------------------
-           2. INTERACTIVE DEVICE SHOWCASE LAYOUT
+           CONTACT SECTION (image_5b00cb.jpg)
         ------------------------------------ */
-        .section-title-italic {
-            font-family: "Georgia", serif;
-            font-style: italic;
-            font-size: 4rem;
-            font-weight: 400;
+        .contact-section {
+            max-width: 800px;
+            margin: 100px auto;
+            padding: 0 40px;
             text-align: center;
-            margin: 60px 0 40px 0;
-            color: #ffffff;
-            letter-spacing: -1px;
+            box-sizing: border-box;
         }
 
-        .projects-showcase-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 35px;
-            margin-bottom: 50px;
-        }
-
-        /* Mobile Device Frame Mockup */
-        .phone-mockup {
-            width: 245px;
-            height: 490px;
-            background: #111111;
-            border: 10px solid #222222;
-            border-radius: 40px;
-            box-shadow: var(--shadow-lg);
-            overflow: hidden;
-            position: relative;
-            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
-            cursor: pointer;
-        }
-
-        /* Center Landscape Booklet/Tablet Card style */
-        .booklet-card {
-            width: 340px;
-            height: 390px;
-            background: #ffffff;
-            border-radius: 14px;
-            box-shadow: var(--shadow-lg);
-            overflow: hidden;
-            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
-            border: 1px solid rgba(0, 0, 0, 0.05);
-            cursor: pointer;
-        }
-
-        .phone-mockup:hover, .booklet-card:hover {
-            transform: translateY(-12px);
-            box-shadow: 0 40px 70px rgba(0, 0, 0, 0.4);
-        }
-
-        .display-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-
-        /* Micro-interaction Hover Layer */
-        .preview-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(33, 77, 58, 0.9); /* Styled to elegant deep green mask overlay */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .phone-mockup:hover .preview-overlay {
-            opacity: 1;
-        }
-
-        .preview-text {
-            color: #ffffff;
-            font-weight: 600;
-            font-size: 0.9rem;
+        .contact-section h2 {
+            font-size: 0.8rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            border: 1.5px solid #ffffff;
-            padding: 8px 20px;
-            border-radius: 24px;
-            background: rgba(255, 255, 255, 0.1);
+            letter-spacing: 4px;
+            color: var(--text-muted);
+            margin-bottom: 10px;
         }
 
-        /* ------------------------------------
-           3. SKILL PILLS & BUTTON AGENTS
-        ------------------------------------ */
-        .skills-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
+        .contact-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin: 0 0 15px 0;
+            letter-spacing: -1.5px;
         }
 
-        .skill-tag {
-            background-color: var(--section-bg);
-            border: 1px solid rgba(0, 0, 0, 0.02);
-            padding: 8px 18px;
-            border-radius: 6px;
+        .contact-p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            max-width: 500px;
+            margin: 0 auto 50px auto;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .contact-card {
+            background: rgba(20, 16, 32, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            padding: 30px 20px;
+            border-radius: 12px;
+            transition: background 0.3s ease;
+        }
+
+        .contact-card:hover {
+            background: rgba(20, 16, 32, 0.5);
+        }
+
+        .contact-label {
             font-size: 0.9rem;
-            color: var(--accent-green);
             font-weight: 600;
-            transition: background-color 0.2s;
+            margin-bottom: 8px;
+            color: var(--text-white);
         }
 
-        .skill-tag:hover {
-            background-color: var(--border-color);
-        }
-
-        .action-btn-container {
-            text-align: center;
-            margin: 50px 0 70px 0;
-        }
-
-        .see-more-btn {
-            background-color: var(--bg-banner);
-            color: var(--accent-green);
-            border: 1px solid var(--border-color);
-            padding: 14px 36px;
+        .contact-value {
             font-size: 0.85rem;
-            font-weight: 700;
-            border-radius: 30px;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            cursor: pointer;
-            box-shadow: var(--shadow-sm);
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            text-decoration: none;
-        }
-
-        .see-more-btn:hover {
-            transform: translateY(-2px);
-            background-color: #ffffff;
-            box-shadow: var(--shadow-md);
+            color: var(--text-muted);
+            word-break: break-all;
         }
 
         footer {
             text-align: center;
-            margin-top: 60px;
-            font-size: 0.85rem;
-            color: rgba(255, 255, 255, 0.85);
-            font-weight: 500;
-            letter-spacing: 0.3px;
-        }
-        
-        .repo-link {
-            color: #ffffff;
-            text-decoration: underline;
-            font-weight: 600;
+            padding: 40px 20px;
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.2);
+            border-top: 1px solid rgba(255, 255, 255, 0.02);
+            margin-top: 100px;
         }
     </style>
 </head>
 <body>
 
-<!-- HERO HEADER BLOCK -->
-<div class="hero-banner">
-    <div class="hero-container">
-        <div class="profile-text">
-            <h1>Ella B. Lerasan</h1>
-            <div class="title-sub">Information Systems Professional & Systems Analyst</div>
-            <div class="meta-info">
-                <span>📍 Panabo City, Davao Region</span>[cite: 1, 2]
-                <span>🎓 Davao del Norte State College</span>[cite: 1, 2]
-                <span>📚 3rd Year BSIS</span>[cite: 1, 2]
+    <!-- NAVBAR AREA (image_5b0126.jpg Layout Context) -->
+    <nav class="navbar">
+        <div class="nav-logo">MyPortfolio</div>
+        <div class="nav-links">
+            <a href="#" class="active">Home</a>
+            <a href="#works">Academic Works</a>
+            <a href="#contact">Contact Me</a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION FRAME (image_5b0126.jpg Layout Context) -->
+    <header class="hero">
+        <div class="hero-content">
+            <div class="hero-pre">Hi I Am</div>
+            <h1>Ella B. <span>Lerasan</span></h1>
+            <p class="hero-p">
+                I am an Information Systems student passionate about analyzing complex system workflows, database structures, and building integrated technical solutions to connect real-world operations with functional user interfaces[cite: 1, 2].
+            </p>
+            <div class="hero-btns">
+                <a href="#works" class="btn-primary">View My Work</a>
+                <a href="#contact" class="btn-secondary">Get In Touch</a>
             </div>
         </div>
-        <div class="profile-img-circle">
-            <img src="ELLA.jpg" alt="Ella B. Lerasan Corporate Portrait">
-        </div>
-    </div>
-</div>
-
-<div class="content-container">
-
-    <!-- EXECUTIVE SUMMARY CARD -->
-    <div class="section-card">
-        <h2>Executive Profile</h2>
-        <p class="card-p">
-            I am a dedicated Information Systems student specializing in end-to-end systems analysis, procedural workflow optimization, and relational database engineering[cite: 1, 2]. Backed by structured methodologies, comprehensive technical field documentation, and proactive stakeholder engagement, my focus is translating institutional business operational demands into high-performing, clean, and maintainable software architectures[cite: 1, 2].
-        </p>
-    </div>
-
-    <!-- GRAPHICAL PROJECTS AREA -->
-    <h1 class="section-title-italic">Projects</h1>
-
-    <div class="projects-showcase-container">
-
-        <!-- Case Study 1 Mockup: Jobify -->
-        <div class="phone-mockup">
-            <img src="6b51537a-0c61-4f35-ae49-4c752ad4aaee.jpg" class="display-img" alt="Jobify Platform Mobile Implementation Preview">
-            <div class="preview-overlay">
-                <span class="preview-text">View Case Study</span>
+        <div class="hero-avatar-frame">
+            <div class="hero-avatar-inner">
+                <img src="ELLA.jpg" alt="Ella B. Lerasan Profile Portrait">
             </div>
         </div>
+    </header>
 
-        <!-- Case Study 2 Mockup: Showcase Documentation Center -->
-        <div class="booklet-card">
-            <img src="ebb74b49-1aef-47e1-b464-8a9f2563cd02.jpg" class="display-img" alt="Proveya Product System Blueprint Display">
+    <!-- ACADEMIC WORKS MANAGER (image_5b0108.jpg Layout Context) -->
+    <main class="timeline-section" id="works">
+        
+        <!-- Interactive Year Tabs Grid -->
+        <div class="timeline-nav">
+            <div class="timeline-tab">1st Year</div>
+            <div class="timeline-tab">2nd Year</div>
+            <div class="timeline-tab active">3rd Year Project Hub</div>
         </div>
 
-        <!-- Case Study 3 Mockup: DMW XI Framework Deployment -->
-        <div class="phone-mockup">
-            <img src="2fadfe57-cdeb-4693-b0a0-e91cd2c2745f.jpg" class="display-img" alt="DMW XI Automated System Matrix Display">
-            <div class="preview-overlay">
-                <span class="preview-text">View Architecture</span>
+        <!-- Dynamic Year 3 Structural Projects Grid Area (image_5b0108.jpg / image_5b0103.jpg Context) -->
+        <div class="projects-grid">
+            
+            <!-- Project Showcase 1: Jobify (image_5b0108.jpg Image Reference Model) -->
+            <div class="project-card">
+                <div class="card-img-holder">
+                    <img src="6b51537a-0c61-4f35-ae49-4c752ad4aaee.jpg" alt="Proveya / Jobify System Presentation Preview">
+                </div>
+                <div class="card-body">
+                    <span class="card-badge">Startup • System Design</span>
+                    <h3>Proveya / Jobify Platform</h3>
+                    <p>A comprehensive web-based platform engineered to optimize local job discovery channels and resolve employment accessibility discrepancies[cite: 1, 2]. Featured at Startup Sundayag 2025[cite: 1, 2].</p>
+                </div>
+            </div>
+
+            <!-- Project Showcase 2: Award Blueprint (image_5b0103.jpg Image Reference Model) -->
+            <div class="project-card">
+                <div class="card-img-holder">
+                    <img src="ebb74b49-1aef-47e1-b464-8a9f2563cd02.jpg" alt="Proveya Team Milestone Profile Layout">
+                </div>
+                <div class="card-body">
+                    <span class="card-badge">Research • Graphic Presentation</span>
+                    <h3>System Documentation Framework</h3>
+                    <p>Comprehensive system architecture models, structural flow matrices, and platform design workflows built to rigorous technical standards[cite: 1, 2].</p>
+                </div>
+            </div>
+
+            <!-- Project Showcase 3: DMW XI Deployment (image_5b00ea.jpg Image Reference Model) -->
+            <div class="project-card">
+                <div class="card-img-holder">
+                    <img src="2fadfe57-cdeb-4693-b0a0-e91cd2c2745f.jpg" alt="DMW XI System Integration Metrics">
+                </div>
+                <div class="card-body">
+                    <span class="card-badge">Database Integration • Government Stack</span>
+                    <h3>DMW XI Inventory Engine</h3>
+                    <p>An automated inventory tracking database engine engineered for the Department of Migrant Workers Regional Office XI to automate property management workflows and form verification[cite: 1, 2].</p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- CONTACT CONTAINER MATRIX (image_5b00cb.jpg Layout Context) -->
+    <section class="contact-section" id="contact">
+        <h2>Get In Touch</h2>
+        <div class="contact-title">Contact Me</div>
+        <p class="contact-p">Feel free to reach out for system design collaborations, technical inquiries, or open-source database evaluations.</p>
+        
+        <div class="contact-grid">
+            <div class="contact-card">
+                <div class="contact-label">Email</div>
+                <div class="contact-value">ella.lerasan@example.com</div>
+            </div>
+            <div class="contact-card">
+                <div class="contact-label">Institution</div>
+                <div class="contact-value">Davao del Norte State College[cite: 1, 2]</div>
+            </div>
+            <div class="contact-card">
+                <div class="contact-label">GitHub Repository</div>
+                <div class="contact-value">ellagithub-portfolio</div>
             </div>
         </div>
-
-    </div>
-
-    <!-- SYSTEM ACCESS CONTEXT HUB ACTION -->
-    <div class="action-btn-container">
-        <a href="https://github.com/sarahjeandayagro-oss/ellagithub-portfolio" target="_blank" class="see-more-btn">
-            Explore Open Source Repositories &rarr;
-        </a>
-    </div>
-
-    <!-- SKILL SPECIFICATIONS MATRIX -->
-    <div class="section-card">
-        <h2>Core Competencies & Technical Skills</h2>
-        <div class="skills-grid">
-            <div class="skill-tag">Systems Analysis & Functional Design</div>
-            <div class="skill-tag">Database Architecture (SQL & ERD Model Management)</div>
-            <div class="skill-tag">Web Application Layout Systems (HTML5, CSS3, JS)</div>
-            <div class="skill-tag">Technical Engineering Documentation (IEEE Formats)</div>
-
-        </div>
-    </div>
+    </section>
 
     <footer>
-        <p>&copy; 2026 Ella B. Lerasan. Production instance provisioned via <a class="repo-link" href="https://github.com/sarahjeandayagro-oss/ellagithub-portfolio" target="_blank">ellagithub-portfolio</a>.</p>
+        <p>&copy; 2026 Ella B. Lerasan • Designed with Professional Dark Tech Stack</p>
     </footer>
-</div>
 
 </body>
 </html>
