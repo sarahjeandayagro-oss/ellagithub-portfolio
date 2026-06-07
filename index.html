@@ -6,45 +6,45 @@
     <title>Ella B. Lerasan | Portfolio</title>
     <style>
         :root {
-            --bg-main: #DC9B9B; /* Your main rose pink background */
-            --bg-top-banner: #F6F4E8; /* Soft cream color for the top banner split */
-            --container-bg: #ffffff; /* Clean white card container for sections */
-            --section-bg: #E5EEE4; /* Soft accent highlights */
-            --border-color: #C0E1D2; /* Muted sage-mint for crisp borders */
+            --bg-color: #DC9B9B; /* Muted Rose is now the main background */
+            --container-bg: #F6F4E8; /* Soft cream color for the profile container */
+            --section-bg: #E5EEE4; /* Muted sage highlight blocks */
+            --border-color: #C0E1D2; /* Soft sage green for clean borders */
             --text-main: #24292f;
             --text-muted: #57606a;
-            --accent-green: #2e614a;
+            --accent-green: #2e614a; /* Professional deep green accent for typography */
         }
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-            background-color: var(--bg-main);
+            background-color: var(--bg-color);
             color: var(--text-main);
             margin: 0;
-            padding: 0 0 60px 0;
+            padding: 40px 20px;
             line-height: 1.6;
         }
 
-        /* Hero Banner Section matching the layout concept in image_698164.jpg */
-        .hero-banner {
-            background-color: var(--bg-top-banner);
-            width: 100%;
-            padding: 50px 0;
-            border-bottom: 1px solid var(--border-color);
-            margin-bottom: 40px;
-        }
-
-        .hero-container {
+        .container {
             max-width: 850px;
             margin: 0 auto;
-            padding: 0 40px;
+            background-color: var(--container-bg);
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        .profile-section {
             display: flex;
             align-items: center;
             gap: 30px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 30px;
+            margin-bottom: 30px;
         }
 
         @media (max-width: 600px) {
-            .hero-container {
+            .profile-section {
                 flex-direction: column-reverse;
                 text-align: center;
             }
@@ -54,62 +54,42 @@
             flex: 1;
         }
 
-        /* Custom Arch Image Frame inspired by image_698164.jpg */
-        .profile-img-arch {
-            width: 160px;
-            height: 220px;
-            border-radius: 100px 100px 0 0; /* Smooth arch cut curve */
+        .profile-img-container {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
             overflow: hidden;
-            border: 4px solid var(--bg-main);
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+            border: 4px solid #ffffff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             flex-shrink: 0;
-            background-color: #ffffff;
         }
 
-        .profile-img-arch img {
+        .profile-img-container img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
 
-        /* Main Content Cards matching layout in image_698128.jpg */
-        .content-container {
-            max-width: 850px;
-            margin: 0 auto;
-            padding: 0 20px;
-            box-sizing: border-box;
-        }
-
-        .section-card {
-            background-color: var(--container-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 40px;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-        }
-
         h1 {
             color: var(--text-main);
-            font-size: 2.4rem;
+            font-size: 2.2rem;
             margin: 0 0 8px 0;
-            font-weight: 700;
         }
 
         h2 {
-            color: var(--text-main);
+            color: var(--accent-green);
             font-size: 1.4rem;
-            border-bottom: 1px solid var(--border-color);
+            border-bottom: 2px solid var(--border-color);
             padding-bottom: 8px;
-            margin-top: 0;
+            margin-top: 40px;
             margin-bottom: 20px;
         }
 
         .title-sub {
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             color: var(--accent-green);
             font-weight: 600;
-            margin: 0 0 16px 0;
+            margin: 0 0 12px 0;
         }
 
         .meta-info {
@@ -118,37 +98,34 @@
         }
 
         .meta-info span {
-            margin-right: 18px;
+            margin-right: 15px;
             display: inline-block;
         }
 
-        .project-block {
+        .project-card {
+            background-color: #ffffff;
             border: 1px solid var(--border-color);
             border-radius: 8px;
             padding: 24px;
-            margin-bottom: 24px;
-            background-color: #ffffff;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
         }
 
-        .project-block:last-child {
-            margin-bottom: 0;
-        }
-
-        .project-block h3 {
+        .project-card h3 {
             margin: 0 0 10px 0;
             color: var(--text-main);
-            font-size: 1.25rem;
+            font-size: 1.2rem;
         }
 
         .badge {
             display: inline-block;
             font-size: 0.75rem;
             font-weight: 600;
-            padding: 4px 12px;
+            padding: 4px 10px;
             border-radius: 20px;
             background-color: var(--section-bg);
             color: var(--accent-green);
-            margin-bottom: 14px;
+            margin-bottom: 12px;
             border: 1px solid var(--border-color);
         }
 
@@ -156,7 +133,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 16px;
-            margin-top: 18px;
+            margin-top: 15px;
         }
 
         .gallery-item {
@@ -179,115 +156,104 @@
             color: var(--text-muted);
             text-align: center;
             border-top: 1px solid var(--border-color);
-            background-color: var(--bg-top-banner);
-        }
-
-        .skills-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
+            background-color: var(--section-bg);
         }
 
         .skill-tag {
+            display: inline-block;
             background-color: var(--section-bg);
             border: 1px solid var(--border-color);
             padding: 6px 14px;
             border-radius: 6px;
             font-size: 0.85rem;
+            margin-right: 8px;
+            margin-bottom: 10px;
             color: var(--accent-green);
             font-weight: 600;
         }
 
         footer {
             text-align: center;
-            margin-top: 40px;
+            margin-top: 50px;
             font-size: 0.85rem;
-            color: #ffffff;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border-color);
+            padding-top: 24px;
         }
         
         .repo-link {
-            color: var(--bg-top-banner);
-            text-decoration: underline;
+            color: var(--accent-green);
+            text-decoration: none;
             font-weight: 600;
+        }
+        .repo-link:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
 
-<!-- Top split banner section matching image_698164.jpg scheme -->
-<div class="hero-banner">
-    <div class="hero-container">
+<div class="container">
+    <div class="profile-section">
         <div class="profile-text">
             <h1>Ella B. Lerasan</h1>
             <div class="title-sub">Information Systems Professional & Systems Analyst</div>
             <div class="meta-info">
-                <span>📍 Panabo City, Davao Region</span>
+                <span>📍 Davao Region, Philippines</span>
                 <span>🎓 Davao del Norte State College</span>
                 <span>📚 3rd Year BSIS</span>
             </div>
         </div>
-        <!-- Beautiful Arch profile frame structure applied here -->
-        <div class="profile-img-arch">
+        <div class="profile-img-container">
             <img src="ELLA.jpg" alt="Ella B. Lerasan Portrait">
         </div>
     </div>
-</div>
 
-<div class="content-container">
-    <!-- About Section Card -->
-    <div class="section-card">
-        <h2>👨‍💻 About Me</h2>
-        <p>
-            I am a dedicated Information Systems student who thrives on designing, optimizing, and building systems that directly solve operational complexities. With a strong foundation in database relationships, field documentation, and stakeholder coordination, my goal is to deliver clean, maintainable, and highly effective software platforms.
-        </p>
-    </div>
+    <h2>👨‍💻 About Me</h2>
+    <p>
+        I am a dedicated Information Systems student who thrives on designing, optimizing, and building systems that directly solve operational complexities. With a strong foundation in database relationships, field documentation, and stakeholder coordination, my goal is to deliver clean, maintainable, and highly effective software platforms.
+    </p>
 
-    <!-- Experience / Projects Card -->
-    <div class="section-card">
-        <h2>🚀 Core Projects & Field Experience</h2>
+    <h2>🚀 Core Projects & Field Experience</h2>
 
-        <div class="project-block">
-            <h3>Proveya / Jobify</h3>
-            <div class="badge">Startup Sundayag 2025 Innovator</div>
-            <p>A web-based platform targeting employment mismatch and accessibility. Designed to offer structured, fair, and verified job access channels for local job hunters and enterprises alike.</p>
-            
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="6b51537a-0c61-4f35-ae49-4c752ad4aaee.jpg" alt="Startup Presentation">
-                    <div class="gallery-caption">Project Pitching</div>
-                </div>
-                <div class="gallery-item">
-                    <img src="ebb74b49-1aef-47e1-b464-8a9f2563cd02.jpg" alt="Team Certificate Presentation">
-                    <div class="gallery-caption">Award Ceremony</div>
-                </div>
+    <div class="project-card">
+        <h3>Proveya / Jobify</h3>
+        <div class="badge">Startup Sundayag 2025 Innovator</div>
+        <p>A web-based platform targeting employment mismatch and accessibility. Designed to offer structured, fair, and verified job access channels for local job hunters and enterprises alike.</p>
+        
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="6b51537a-0c61-4f35-ae49-4c752ad4aaee.jpg" alt="Startup Presentation">
+                <div class="gallery-caption">Project Pitching</div>
             </div>
-        </div>
-
-        <div class="project-block">
-            <h3>DMW XI Inventory Management System</h3>
-            <div class="badge">Government Unit Collaboration</div>
-            <p>Developed to modernize property asset tracking mechanics at the Department of Migrant Workers Regional Office XI. Features integrated asset assignment mechanisms with instant PAR and ICS reporting.</p>
-            
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="2fadfe57-cdeb-4693-b0a0-e91cd2c2745f.jpg" alt="Field Deployment at DMW Office XI">
-                    <div class="gallery-caption">DMW Regional Office XI</div>
-                </div>
+            <div class="gallery-item">
+                <img src="ebb74b49-1aef-47e1-b464-8a9f2563cd02.jpg" alt="Team Certificate Presentation">
+                <div class="gallery-caption">Award Ceremony</div>
             </div>
         </div>
     </div>
 
-    <!-- Technical Capabilities Card -->
-    <div class="section-card">
-        <h2>🛠 Technical Capabilities</h2>
-        <div class="skills-grid">
-            <div class="skill-tag">Systems Analysis & Design</div>
-            <div class="skill-tag">Database Architecture (SQL & ERD)</div>
-            <div class="skill-tag">Python Development</div>
-            <div class="skill-tag">Web Platforms (HTML, CSS, JS)</div>
-            <div class="skill-tag">IEEE Standards Documentation</div>
-            <div class="skill-tag">Agile Development Workflows</div>
+    <div class="project-card">
+        <h3>DMW XI Inventory Management System</h3>
+        <div class="badge">Government Unit Collaboration</div>
+        <p>Developed to modernize property asset tracking mechanics at the Department of Migrant Workers Regional Office XI. Features integrated asset assignment mechanisms with instant PAR and ICS reporting.</p>
+        
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="2fadfe57-cdeb-4693-b0a0-e91cd2c2745f.jpg" alt="Field Deployment at DMW Office XI">
+                <div class="gallery-caption">DMW Regional Office XI</div>
+            </div>
         </div>
+    </div>
+
+    <h2>🛠 Technical Capabilities</h2>
+    <div class="skills-grid">
+        <div class="skill-tag">Systems Analysis & Design</div>
+        <div class="skill-tag">Database Architecture (SQL & ERD)</div>
+        <div class="skill-tag">Python Development</div>
+        <div class="skill-tag">Web Platforms (HTML, CSS, JS)</div>
+        <div class="skill-tag">IEEE Standards Documentation</div>
+        <div class="skill-tag">Agile Development Workflows</div>
     </div>
 
     <footer>
