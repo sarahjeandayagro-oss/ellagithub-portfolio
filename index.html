@@ -6,18 +6,19 @@
     <title>Ella B. Lerasan | Portfolio</title>
     <style>
         :root {
-            --bg-color: #0d1117;
-            --container-bg: #161b22;
-            --border-color: #30363d;
-            --text-main: #c9d1d9;
-            --text-muted: #8b949e;
-            --accent-blue: #58a6ff;
-            --accent-purple: #bc8cff;
-            --accent-green: #3fb950;
+            --bg-color: #f6f8fa;
+            --container-bg: #ffffff;
+            --border-color: #d0d7de;
+            --text-main: #24292f;
+            --text-muted: #57606a;
+            --accent-blue: #0969da;
+            --accent-purple: #8250df;
+            --accent-green: #1a7f37;
+            --card-bg: #f8f9fa;
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
             background-color: var(--bg-color);
             color: var(--text-main);
             margin: 0;
@@ -30,36 +31,65 @@
             margin: 0 auto;
             background-color: var(--container-bg);
             border: 1px solid var(--border-color);
-            border-radius: 6px;
+            border-radius: 8px;
             padding: 40px;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
         }
 
-        .profile-header {
+        .profile-section {
+            display: flex;
+            align-items: center;
+            gap: 30px;
             border-bottom: 1px solid var(--border-color);
-            padding-bottom: 24px;
+            padding-bottom: 30px;
             margin-bottom: 30px;
         }
 
+        @media (max-width: 600px) {
+            .profile-section {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+        }
+
+        .profile-text {
+            flex: 1;
+        }
+
+        .profile-img-container {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid var(--border-color);
+            flex-shrink: 0;
+        }
+
+        .profile-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
         h1 {
-            color: #ffffff;
+            color: var(--text-main);
             font-size: 2.2rem;
             margin: 0 0 8px 0;
         }
 
         h2 {
-            color: #ffffff;
+            color: var(--text-main);
             font-size: 1.4rem;
             border-bottom: 1px solid var(--border-color);
             padding-bottom: 8px;
-            margin-top: 30px;
-            margin-bottom: 16px;
+            margin-top: 40px;
+            margin-bottom: 20px;
         }
 
         .title-sub {
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             color: var(--accent-blue);
-            font-weight: 500;
+            font-weight: 600;
             margin: 0 0 12px 0;
         }
 
@@ -70,71 +100,99 @@
 
         .meta-info span {
             margin-right: 15px;
+            display: inline-block;
         }
 
         .project-card {
-            background-color: rgba(255,255,255,0.02);
+            background-color: var(--card-bg);
             border: 1px solid var(--border-color);
-            border-radius: 6px;
-            padding: 20px;
-            margin-bottom: 16px;
+            border-radius: 8px;
+            padding: 24px;
+            margin-bottom: 20px;
         }
 
         .project-card h3 {
-            margin: 0 0 8px 0;
-            color: var(--accent-purple);
-            font-size: 1.15rem;
+            margin: 0 0 10px 0;
+            color: var(--text-main);
+            font-size: 1.2rem;
         }
 
         .badge {
             display: inline-block;
             font-size: 0.75rem;
             font-weight: 600;
-            padding: 3px 8px;
+            padding: 4px 10px;
             border-radius: 20px;
-            background-color: rgba(88, 166, 255, 0.15);
+            background-color: rgba(9, 105, 218, 0.1);
             color: var(--accent-blue);
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
 
         .badge.startup {
-            background-color: rgba(188, 140, 255, 0.15);
+            background-color: rgba(130, 80, 223, 0.1);
             color: var(--accent-purple);
         }
 
         .badge.gov {
-            background-color: rgba(63, 185, 80, 0.15);
+            background-color: rgba(26, 127, 55, 0.1);
             color: var(--accent-green);
         }
 
-        .skills-grid {
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-top: 15px;
+        }
+
+        .gallery-item {
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            overflow: hidden;
+            background: #fff;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
             display: block;
+        }
+
+        .gallery-caption {
+            padding: 8px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-align: center;
+            border-top: 1px solid var(--border-color);
         }
 
         .skill-tag {
             display: inline-block;
-            background-color: #21262d;
+            background-color: #eff1f3;
             border: 1px solid var(--border-color);
-            padding: 5px 12px;
+            padding: 6px 14px;
             border-radius: 6px;
             font-size: 0.85rem;
             margin-right: 8px;
             margin-bottom: 10px;
-            color: #ffffff;
+            color: var(--text-main);
+            font-weight: 500;
         }
 
         footer {
             text-align: center;
-            margin-top: 40px;
+            margin-top: 50px;
             font-size: 0.85rem;
             color: var(--text-muted);
             border-top: 1px solid var(--border-color);
-            padding-top: 20px;
+            padding-top: 24px;
         }
         
         .repo-link {
             color: var(--accent-blue);
             text-decoration: none;
+            font-weight: 500;
         }
         .repo-link:hover {
             text-decoration: underline;
@@ -144,13 +202,19 @@
 <body>
 
 <div class="container">
-    <div class="profile-header">
-        <h1>Ella B. Lerasan</h1>
-        <div class="title-sub">Information Systems Professional & Systems Analyst</div>
-        <div class="meta-info">
-            <span>📍 Davao Region, Philippines</span>
-            <span>🎓 Davao del Norte State College</span>
-            <span>📚 3rd Year BSIS</span>
+    <div class="profile-section">
+        <div class="profile-text">
+            <h1>Ella B. Lerasan</h1>
+            <div class="title-sub">Information Systems Professional & Systems Analyst</div>
+            <div class="meta-info">
+                <span>📍 Davao Region, Philippines</span>
+                <span>🎓 Davao del Norte State College</span>
+                <span>📚 3rd Year BSIS</span>
+            </div>
+        </div>
+        <!-- Profile Image: Uses verbatim profile portrait reference -->
+        <div class="profile-img-container">
+            <img src="ELLA.jpg" alt="Ella B. Lerasan Portrait">
         </div>
     </div>
 
@@ -165,24 +229,30 @@
         <h3>Proveya / Jobify</h3>
         <div class="badge startup">Startup Sundayag 2025 Innovator</div>
         <p>A web-based platform targeting employment mismatch and accessibility. Designed to offer structured, fair, and verified job access channels for local job hunters and enterprises alike.</p>
-    </div>
-
-    <div class="project-card">
-        <h3>Panabo City Library E-Portal</h3>
-        <div class="badge">Academic Capstone Framework</div>
-        <p>An automated registration engine and statistical utility built to digitize entry, exit, and computer unit workstation allocation workflows using integrated barcode/QR reading capabilities.</p>
+        
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="6b51537a-0c61-4f35-ae49-4c752ad4aaee.jpg" alt="Startup Presentation">
+                <div class="gallery-caption">Project Pitching</div>
+            </div>
+            <div class="gallery-item">
+                <img src="ebb74b49-1aef-47e1-b464-8a9f2563cd02.jpg" alt="Team Certificate Presentation">
+                <div class="gallery-caption">Award Ceremony</div>
+            </div>
+        </div>
     </div>
 
     <div class="project-card">
         <h3>DMW XI Inventory Management System</h3>
         <div class="badge gov">Government Unit Collaboration</div>
         <p>Developed to modernize property asset tracking mechanics at the Department of Migrant Workers Regional Office XI. Features integrated asset assignment mechanisms with instant PAR and ICS reporting.</p>
-    </div>
-
-    <div class="project-card">
-        <h3>Buzzify</h3>
-        <div class="badge">Commercial Project</div>
-        <p>A web-based digital branding and audience expansion hub custom-tailored to boost localized consumer reach for the Greater RJ Appliance & Trading Corporation.</p>
+        
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="2fadfe57-cdeb-4693-b0a0-e91cd2c2745f.jpg" alt="Field Deployment at DMW Office XI">
+                <div class="gallery-caption">DMW Regional Office XI</div>
+            </div>
+        </div>
     </div>
 
     <h2>🛠 Technical Capabilities</h2>
@@ -196,7 +266,7 @@
     </div>
 
     <footer>
-        <p>&copy; 2026 Ella B. Lerasan. Viewed via <a class="repo-link" href="https://github.com/sarahjeandayagro-oss/ellagithub-portfolio" target="_blank">ellagithub-portfolio</a>.</p>
+        <p>&copy; 2026 Ella B. Lerasan. Live Portfolio hosted at <a class="repo-link" href="https://github.com/sarahjeandayagro-oss/ellagithub-portfolio" target="_blank">ellagithub-portfolio</a>.</p>
     </footer>
 </div>
 
