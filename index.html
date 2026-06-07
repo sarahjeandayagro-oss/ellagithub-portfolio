@@ -3,50 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ella B. Lerasan | Portfolio</title>
+    <title>Ella B. Lerasan | Professional Portfolio</title>
     <style>
         :root {
-            --bg-color: #DC9B9B; /* Muted Rose is now the main background */
-            --container-bg: #F6F4E8; /* Soft cream color for the profile container */
-            --section-bg: #E5EEE4; /* Muted sage highlight blocks */
-            --border-color: #C0E1D2; /* Soft sage green for clean borders */
-            --text-main: #24292f;
-            --text-muted: #57606a;
-            --accent-green: #2e614a; /* Professional deep green accent for typography */
+            --bg-main: #DC9B9B; /* Premium Matte Rose Background */
+            --bg-banner: #F6F4E8; /* Silk Cream Contrast Section */
+            --container-bg: #ffffff; /* pure white structural sheets */
+            --section-bg: #E5EEE4; /* Smooth sage structural tint */
+            --border-color: #C0E1D2; /* Clean alignment sage-mint border line */
+            --text-dark: #1a1d20;
+            --text-muted: #495057;
+            --accent-green: #214d3a;
+            --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.04);
+            --shadow-md: 0 12px 30px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 24px 50px rgba(0, 0, 0, 0.25);
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-main);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-dark);
             margin: 0;
-            padding: 40px 20px;
-            line-height: 1.6;
+            padding: 0 0 80px 0;
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
         }
 
-        .container {
-            max-width: 850px;
+        /* ------------------------------------
+           1. PREMIUM HERO SECTION
+        ------------------------------------ */
+        .hero-banner {
+            background-color: var(--bg-banner);
+            width: 100%;
+            padding: 65px 0;
+            border-bottom: 1px solid var(--border-color);
+            position: relative;
+        }
+
+        .hero-container {
+            max-width: 950px;
             margin: 0 auto;
-            background-color: var(--container-bg);
-            border: 1px solid rgba(0, 0, 0, 0.08);
-            border-radius: 12px;
-            padding: 40px;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-        }
-
-        .profile-section {
+            padding: 0 40px;
             display: flex;
             align-items: center;
-            gap: 30px;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 30px;
-            margin-bottom: 30px;
+            justify-content: space-between;
+            gap: 40px;
         }
 
-        @media (max-width: 600px) {
-            .profile-section {
+        @media (max-width: 768px) {
+            .hero-container {
                 flex-direction: column-reverse;
                 text-align: center;
+                padding: 0 24px;
             }
         }
 
@@ -54,210 +62,340 @@
             flex: 1;
         }
 
-        .profile-img-container {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            overflow: hidden;
-            border: 4px solid #ffffff;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            flex-shrink: 0;
-        }
-
-        .profile-img-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
         h1 {
-            color: var(--text-main);
-            font-size: 2.2rem;
-            margin: 0 0 8px 0;
-        }
-
-        h2 {
-            color: var(--accent-green);
-            font-size: 1.4rem;
-            border-bottom: 2px solid var(--border-color);
-            padding-bottom: 8px;
-            margin-top: 40px;
-            margin-bottom: 20px;
+            color: var(--text-dark);
+            font-size: 2.6rem;
+            margin: 0 0 10px 0;
+            font-weight: 800;
+            letter-spacing: -0.5px;
         }
 
         .title-sub {
-            font-size: 1.15rem;
+            font-size: 1.25rem;
             color: var(--accent-green);
             font-weight: 600;
-            margin: 0 0 12px 0;
+            margin: 0 0 20px 0;
+            letter-spacing: -0.2px;
         }
 
         .meta-info {
             font-size: 0.9rem;
             color: var(--text-muted);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
         }
 
         .meta-info span {
-            margin-right: 15px;
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            font-weight: 500;
         }
 
-        .project-card {
-            background-color: #ffffff;
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 24px;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
-        }
-
-        .project-card h3 {
-            margin: 0 0 10px 0;
-            color: var(--text-main);
-            font-size: 1.2rem;
-        }
-
-        .badge {
-            display: inline-block;
-            font-size: 0.75rem;
-            font-weight: 600;
-            padding: 4px 10px;
-            border-radius: 20px;
-            background-color: var(--section-bg);
-            color: var(--accent-green);
-            margin-bottom: 12px;
-            border: 1px solid var(--border-color);
-        }
-
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 16px;
-            margin-top: 15px;
-        }
-
-        .gallery-item {
-            border: 1px solid var(--border-color);
-            border-radius: 6px;
+        .profile-img-circle {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
             overflow: hidden;
-            background: #ffffff;
+            border: 4px solid #ffffff;
+            box-shadow: var(--shadow-md);
+            flex-shrink: 0;
+            background-color: #ffffff;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        .gallery-item img {
+        .profile-img-circle:hover {
+            transform: scale(1.04);
+        }
+
+        .profile-img-circle img {
             width: 100%;
-            height: 150px;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Content framing grids */
+        .content-container {
+            max-width: 950px;
+            margin: 50px auto 0 auto;
+            padding: 0 40px;
+            box-sizing: border-box;
+        }
+
+        @media (max-width: 768px) {
+            .content-container {
+                padding: 0 24px;
+            }
+        }
+
+        .section-card {
+            background-color: var(--container-bg);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 45px;
+            box-shadow: var(--shadow-md);
+        }
+
+        h2 {
+            color: var(--text-dark);
+            font-size: 1.5rem;
+            font-weight: 700;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 12px;
+            margin-top: 0;
+            margin-bottom: 24px;
+            letter-spacing: -0.3px;
+        }
+
+        .card-p {
+            font-size: 1.05rem;
+            color: rgba(0, 0, 0, 0.75);
+            margin: 0;
+        }
+
+        /* ------------------------------------
+           2. INTERACTIVE DEVICE SHOWCASE LAYOUT
+        ------------------------------------ */
+        .section-title-italic {
+            font-family: "Georgia", serif;
+            font-style: italic;
+            font-size: 4rem;
+            font-weight: 400;
+            text-align: center;
+            margin: 60px 0 40px 0;
+            color: #ffffff;
+            letter-spacing: -1px;
+        }
+
+        .projects-showcase-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 35px;
+            margin-bottom: 50px;
+        }
+
+        /* Mobile Device Frame Mockup */
+        .phone-mockup {
+            width: 245px;
+            height: 490px;
+            background: #111111;
+            border: 10px solid #222222;
+            border-radius: 40px;
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+            position: relative;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+            cursor: pointer;
+        }
+
+        /* Center Landscape Booklet/Tablet Card style */
+        .booklet-card {
+            width: 340px;
+            height: 390px;
+            background: #ffffff;
+            border-radius: 14px;
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            cursor: pointer;
+        }
+
+        .phone-mockup:hover, .booklet-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 40px 70px rgba(0, 0, 0, 0.4);
+        }
+
+        .display-img {
+            width: 100%;
+            height: 100%;
             object-fit: cover;
             display: block;
         }
 
-        .gallery-caption {
-            padding: 8px;
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            text-align: center;
-            border-top: 1px solid var(--border-color);
-            background-color: var(--section-bg);
+        /* Micro-interaction Hover Layer */
+        .preview-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(33, 77, 58, 0.9); /* Styled to elegant deep green mask overlay */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .phone-mockup:hover .preview-overlay {
+            opacity: 1;
+        }
+
+        .preview-text {
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 1.5px solid #ffffff;
+            padding: 8px 20px;
+            border-radius: 24px;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* ------------------------------------
+           3. SKILL PILLS & BUTTON AGENTS
+        ------------------------------------ */
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
         }
 
         .skill-tag {
-            display: inline-block;
             background-color: var(--section-bg);
-            border: 1px solid var(--border-color);
-            padding: 6px 14px;
+            border: 1px solid rgba(0, 0, 0, 0.02);
+            padding: 8px 18px;
             border-radius: 6px;
-            font-size: 0.85rem;
-            margin-right: 8px;
-            margin-bottom: 10px;
+            font-size: 0.9rem;
             color: var(--accent-green);
             font-weight: 600;
+            transition: background-color 0.2s;
+        }
+
+        .skill-tag:hover {
+            background-color: var(--border-color);
+        }
+
+        .action-btn-container {
+            text-align: center;
+            margin: 50px 0 70px 0;
+        }
+
+        .see-more-btn {
+            background-color: var(--bg-banner);
+            color: var(--accent-green);
+            border: 1px solid var(--border-color);
+            padding: 14px 36px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            border-radius: 30px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            cursor: pointer;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+        }
+
+        .see-more-btn:hover {
+            transform: translateY(-2px);
+            background-color: #ffffff;
+            box-shadow: var(--shadow-md);
         }
 
         footer {
             text-align: center;
-            margin-top: 50px;
+            margin-top: 60px;
             font-size: 0.85rem;
-            color: var(--text-muted);
-            border-top: 1px solid var(--border-color);
-            padding-top: 24px;
+            color: rgba(255, 255, 255, 0.85);
+            font-weight: 500;
+            letter-spacing: 0.3px;
         }
         
         .repo-link {
-            color: var(--accent-green);
-            text-decoration: none;
-            font-weight: 600;
-        }
-        .repo-link:hover {
+            color: #ffffff;
             text-decoration: underline;
+            font-weight: 600;
         }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <div class="profile-section">
+<!-- HERO HEADER BLOCK -->
+<div class="hero-banner">
+    <div class="hero-container">
         <div class="profile-text">
             <h1>Ella B. Lerasan</h1>
             <div class="title-sub">Information Systems Professional & Systems Analyst</div>
             <div class="meta-info">
-                <span>📍 Davao Region, Philippines</span>
-                <span>🎓 Davao del Norte State College</span>
-                <span>📚 3rd Year BSIS</span>
+                <span>📍 Panabo City, Davao Region</span>[cite: 1, 2]
+                <span>🎓 Davao del Norte State College</span>[cite: 1, 2]
+                <span>📚 3rd Year BSIS</span>[cite: 1, 2]
             </div>
         </div>
-        <div class="profile-img-container">
-            <img src="ELLA.jpg" alt="Ella B. Lerasan Portrait">
-        </div>
-    </div>
-
-    <h2>👨‍💻 About Me</h2>
-    <p>
-        I am a dedicated Information Systems student who thrives on designing, optimizing, and building systems that directly solve operational complexities. With a strong foundation in database relationships, field documentation, and stakeholder coordination, my goal is to deliver clean, maintainable, and highly effective software platforms.
-    </p>
-
-    <h2>🚀 Core Projects & Field Experience</h2>
-
-    <div class="project-card">
-        <h3>Proveya / Jobify</h3>
-        <div class="badge">Startup Sundayag 2025 Innovator</div>
-        <p>A web-based platform targeting employment mismatch and accessibility. Designed to offer structured, fair, and verified job access channels for local job hunters and enterprises alike.</p>
-        
-        <div class="gallery-grid">
-            <div class="gallery-item">
-                <img src="6b51537a-0c61-4f35-ae49-4c752ad4aaee.jpg" alt="Startup Presentation">
-                <div class="gallery-caption">Project Pitching</div>
-            </div>
-            <div class="gallery-item">
-                <img src="ebb74b49-1aef-47e1-b464-8a9f2563cd02.jpg" alt="Team Certificate Presentation">
-                <div class="gallery-caption">Award Ceremony</div>
-            </div>
+        <div class="profile-img-circle">
+            <img src="ELLA.jpg" alt="Ella B. Lerasan Corporate Portrait">
         </div>
     </div>
+</div>
 
-    <div class="project-card">
-        <h3>DMW XI Inventory Management System</h3>
-        <div class="badge">Government Unit Collaboration</div>
-        <p>Developed to modernize property asset tracking mechanics at the Department of Migrant Workers Regional Office XI. Features integrated asset assignment mechanisms with instant PAR and ICS reporting.</p>
-        
-        <div class="gallery-grid">
-            <div class="gallery-item">
-                <img src="2fadfe57-cdeb-4693-b0a0-e91cd2c2745f.jpg" alt="Field Deployment at DMW Office XI">
-                <div class="gallery-caption">DMW Regional Office XI</div>
-            </div>
-        </div>
+<div class="content-container">
+
+    <!-- EXECUTIVE SUMMARY CARD -->
+    <div class="section-card">
+        <h2>Executive Profile</h2>
+        <p class="card-p">
+            I am a dedicated Information Systems student specializing in end-to-end systems analysis, procedural workflow optimization, and relational database engineering[cite: 1, 2]. Backed by structured methodologies, comprehensive technical field documentation, and proactive stakeholder engagement, my focus is translating institutional business operational demands into high-performing, clean, and maintainable software architectures[cite: 1, 2].
+        </p>
     </div>
 
-    <h2>🛠 Technical Capabilities</h2>
-    <div class="skills-grid">
-        <div class="skill-tag">Systems Analysis & Design</div>
-        <div class="skill-tag">Database Architecture (SQL & ERD)</div>
-        <div class="skill-tag">Python Development</div>
-        <div class="skill-tag">Web Platforms (HTML, CSS, JS)</div>
-        <div class="skill-tag">IEEE Standards Documentation</div>
-        <div class="skill-tag">Agile Development Workflows</div>
+    <!-- GRAPHICAL PROJECTS AREA -->
+    <h1 class="section-title-italic">Projects</h1>
+
+    <div class="projects-showcase-container">
+
+        <!-- Case Study 1 Mockup: Jobify -->
+        <div class="phone-mockup">
+            <img src="6b51537a-0c61-4f35-ae49-4c752ad4aaee.jpg" class="display-img" alt="Jobify Platform Mobile Implementation Preview">
+            <div class="preview-overlay">
+                <span class="preview-text">View Case Study</span>
+            </div>
+        </div>
+
+        <!-- Case Study 2 Mockup: Showcase Documentation Center -->
+        <div class="booklet-card">
+            <img src="ebb74b49-1aef-47e1-b464-8a9f2563cd02.jpg" class="display-img" alt="Proveya Product System Blueprint Display">
+        </div>
+
+        <!-- Case Study 3 Mockup: DMW XI Framework Deployment -->
+        <div class="phone-mockup">
+            <img src="2fadfe57-cdeb-4693-b0a0-e91cd2c2745f.jpg" class="display-img" alt="DMW XI Automated System Matrix Display">
+            <div class="preview-overlay">
+                <span class="preview-text">View Architecture</span>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- SYSTEM ACCESS CONTEXT HUB ACTION -->
+    <div class="action-btn-container">
+        <a href="https://github.com/sarahjeandayagro-oss/ellagithub-portfolio" target="_blank" class="see-more-btn">
+            Explore Open Source Repositories &rarr;
+        </a>
+    </div>
+
+    <!-- SKILL SPECIFICATIONS MATRIX -->
+    <div class="section-card">
+        <h2>Core Competencies & Technical Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-tag">Systems Analysis & Functional Design</div>
+            <div class="skill-tag">Database Architecture (SQL & ERD Model Management)</div>
+            <div class="skill-tag">Web Application Layout Systems (HTML5, CSS3, JS)</div>
+            <div class="skill-tag">Technical Engineering Documentation (IEEE Formats)</div>
+
+        </div>
     </div>
 
     <footer>
-        <p>&copy; 2026 Ella B. Lerasan. Live Portfolio hosted at <a class="repo-link" href="https://github.com/sarahjeandayagro-oss/ellagithub-portfolio" target="_blank">ellagithub-portfolio</a>.</p>
+        <p>&copy; 2026 Ella B. Lerasan. Production instance provisioned via <a class="repo-link" href="https://github.com/sarahjeandayagro-oss/ellagithub-portfolio" target="_blank">ellagithub-portfolio</a>.</p>
     </footer>
 </div>
 
