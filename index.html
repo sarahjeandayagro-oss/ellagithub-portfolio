@@ -6,10 +6,12 @@
     <title>Ella B. Lerasan | Portfolio</title>
     <style>
         :root {
-            --bg-main: #DC9B9B; /* Main beautiful rose pink background */
-            --bg-banner: #F6F4E8; /* Soft cream for top nav split */
-            --border-color: #C0E1D2; /* Soft sage green highlight tint */
-            --text-dark: #24292f;
+            --bg-main: #DC9B9B; /* Your main rose pink background */
+            --bg-top-banner: #F6F4E8; /* Soft cream color for the top banner split */
+            --container-bg: #ffffff; /* Clean white card container for sections */
+            --section-bg: #E5EEE4; /* Soft accent highlights */
+            --border-color: #C0E1D2; /* Muted sage-mint for crisp borders */
+            --text-main: #24292f;
             --text-muted: #57606a;
             --accent-green: #2e614a;
         }
@@ -17,219 +19,281 @@
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
             background-color: var(--bg-main);
-            color: #ffffff;
+            color: var(--text-main);
             margin: 0;
-            padding: 0;
+            padding: 0 0 60px 0;
             line-height: 1.6;
         }
 
-        /* Top Elegant Navigation Bar from image context layout */
-        .navbar {
-            background-color: var(--bg-banner);
-            padding: 20px 0;
+        /* Hero Banner Section matching the layout concept in image_698164.jpg */
+        .hero-banner {
+            background-color: var(--bg-top-banner);
+            width: 100%;
+            padding: 50px 0;
             border-bottom: 1px solid var(--border-color);
-            text-align: center;
+            margin-bottom: 40px;
         }
 
-        .navbar a {
-            color: var(--text-dark);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            margin: 0 15px;
-            transition: color 0.2s;
-        }
-
-        .navbar a:hover, .navbar a.active {
-            color: var(--bg-main);
-            border-bottom: 2px solid var(--bg-main);
-            padding-bottom: 4px;
-        }
-
-        /* Big Section Header Typography */
-        .section-title {
-            font-family: "Georgia", serif;
-            font-style: italic;
-            font-size: 4.5rem;
-            font-weight: 400;
-            text-align: center;
-            margin: 50px 0 40px 0;
-            color: #ffffff;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.05);
-        }
-
-        /* Main Projects Row Container matching image_6979a7.jpg */
-        .projects-showcase-container {
-            max-width: 1100px;
+        .hero-container {
+            max-width: 850px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 40px;
             display: flex;
-            justify-content: center;
             align-items: center;
-            flex-wrap: wrap;
             gap: 30px;
         }
 
-        /* 📱 Mobile Phone Mockup Frame Design */
-        .phone-mockup {
-            width: 240px;
-            height: 480px;
-            background: #1e1e1e;
-            border: 12px solid #2d2d2d;
-            border-radius: 36px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        @media (max-width: 600px) {
+            .hero-container {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+        }
+
+        .profile-text {
+            flex: 1;
+        }
+
+        /* Custom Arch Image Frame inspired by image_698164.jpg */
+        .profile-img-arch {
+            width: 160px;
+            height: 220px;
+            border-radius: 100px 100px 0 0; /* Smooth arch cut curve */
             overflow: hidden;
-            position: relative;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            cursor: pointer;
+            border: 4px solid var(--bg-main);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+            flex-shrink: 0;
+            background-color: #ffffff;
         }
 
-        /* 📄 Curved Booklet Card Design (Middle Item) */
-        .booklet-card {
-            width: 320px;
-            height: 380px;
-            background: #ffffff;
-            border-radius: 12px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
-            overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 1px solid var(--border-color);
-            cursor: pointer;
-        }
-
-        .phone-mockup:hover, .booklet-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 30px 50px rgba(0, 0, 0, 0.4);
-        }
-
-        /* Image Display Fits Inside Frames Perfectly */
-        .display-img {
+        .profile-img-arch img {
             width: 100%;
             height: 100%;
+            object-fit: cover;
+        }
+
+        /* Main Content Cards matching layout in image_698128.jpg */
+        .content-container {
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+
+        .section-card {
+            background-color: var(--container-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        h1 {
+            color: var(--text-main);
+            font-size: 2.4rem;
+            margin: 0 0 8px 0;
+            font-weight: 700;
+        }
+
+        h2 {
+            color: var(--text-main);
+            font-size: 1.4rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 8px;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .title-sub {
+            font-size: 1.2rem;
+            color: var(--accent-green);
+            font-weight: 600;
+            margin: 0 0 16px 0;
+        }
+
+        .meta-info {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .meta-info span {
+            margin-right: 18px;
+            display: inline-block;
+        }
+
+        .project-block {
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 24px;
+            margin-bottom: 24px;
+            background-color: #ffffff;
+        }
+
+        .project-block:last-child {
+            margin-bottom: 0;
+        }
+
+        .project-block h3 {
+            margin: 0 0 10px 0;
+            color: var(--text-main);
+            font-size: 1.25rem;
+        }
+
+        .badge {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 4px 12px;
+            border-radius: 20px;
+            background-color: var(--section-bg);
+            color: var(--accent-green);
+            margin-bottom: 14px;
+            border: 1px solid var(--border-color);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-top: 18px;
+        }
+
+        .gallery-item {
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            overflow: hidden;
+            background: #ffffff;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 150px;
             object-fit: cover;
             display: block;
         }
 
-        /* Interactive Hover Overlay to show project view cues */
-        .preview-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(220, 155, 155, 0.85); /* Smooth tint color overlay matching scheme */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .phone-mockup:hover .preview-overlay {
-            opacity: 1;
-        }
-
-        .preview-text {
-            color: #ffffff;
-            font-weight: 600;
-            font-size: 1.1rem;
-            border: 2px solid #ffffff;
-            padding: 8px 18px;
-            border-radius: 20px;
-            background: rgba(0,0,0,0.1);
-        }
-
-        /* Center Pill Navigation Trigger Button at bottom */
-        .action-btn-container {
+        .gallery-caption {
+            padding: 8px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
             text-align: center;
-            margin: 60px 0;
+            border-top: 1px solid var(--border-color);
+            background-color: var(--bg-top-banner);
         }
 
-        .see-more-btn {
-            background-color: #ffffff;
-            color: var(--bg-main);
-            border: none;
-            padding: 14px 36px;
-            font-size: 0.95rem;
-            font-weight: 700;
-            border-radius: 30px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            cursor: pointer;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.2s, box-shadow 0.2s;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            text-decoration: none;
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
         }
 
-        .see-more-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        .skill-tag {
+            background-color: var(--section-bg);
+            border: 1px solid var(--border-color);
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            color: var(--accent-green);
+            font-weight: 600;
         }
 
         footer {
             text-align: center;
-            padding: 20px;
+            margin-top: 40px;
             font-size: 0.85rem;
-            opacity: 0.8;
-            letter-spacing: 0.5px;
+            color: #ffffff;
+        }
+        
+        .repo-link {
+            color: var(--bg-top-banner);
+            text-decoration: underline;
+            font-weight: 600;
         }
     </style>
 </head>
 <body>
 
-<!-- Navigation Bar Concept matching image_6979a7.jpg -->
-<nav class="navbar">
-    <a href="#">Home</a>
-    <a href="#">About</a>
-    <a href="#">Certificate</a>
-    <a href="#" class="active">Projects</a>
-    <a href="#">Contact</a>
-</nav>
-
-<!-- Immersive Title Header Context -->
-<h1 class="section-title">Projects</h1>
-
-<!-- Creative Showcase Display Grid Blocks (No more text resumes!) -->
-<main class="projects-showcase-container">
-
-    <!-- Project 1: Phone Mockup Frame (Jobify Interface Display) -->
-    <div class="phone-mockup">
-        <img src="6b51537a-0c61-4f35-ae49-4c752ad4aaee.jpg" class="display-img" alt="Jobify Mobile System Feature">
-        <div class="preview-overlay">
-            <span class="preview-text">View Project</span>
+<!-- Top split banner section matching image_698164.jpg scheme -->
+<div class="hero-banner">
+    <div class="hero-container">
+        <div class="profile-text">
+            <h1>Ella B. Lerasan</h1>
+            <div class="title-sub">Information Systems Professional & Systems Analyst</div>
+            <div class="meta-info">
+                <span>📍 Panabo City, Davao Region</span>
+                <span>🎓 Davao del Norte State College</span>
+                <span>📚 3rd Year BSIS</span>
+            </div>
+        </div>
+        <!-- Beautiful Arch profile frame structure applied here -->
+        <div class="profile-img-arch">
+            <img src="ELLA.jpg" alt="Ella B. Lerasan Portrait">
         </div>
     </div>
-
-    <!-- Project 2: Booklet Presenter Frame (Middle Showcase Card) -->
-    <div class="booklet-card">
-        <img src="ebb74b49-1aef-47e1-b464-8a9f2563cd02.jpg" class="display-img" alt="Proveya Document Overview Layout">
-    </div>
-
-    <!-- Project 3: Phone Mockup Frame (DMW XI Project Interface Display) -->
-    <div class="phone-mockup">
-        <img src="2fadfe57-cdeb-4693-b0a0-e91cd2c2745f.jpg" class="display-img" alt="DMW XI System Interface Display">
-        <div class="preview-overlay">
-            <span class="preview-text">View Preview</span>
-        </div>
-    </div>
-
-</main>
-
-<!-- Bottom See More Action Pill Button Trigger -->
-<div class="action-btn-container">
-    <a href="https://github.com/sarahjeandayagro-oss/ellagithub-portfolio" target="_blank" class="see-more-btn">
-        See More &rarr;
-    </a>
 </div>
 
-<footer>
-    <p>&copy; 2026 Ella B. Lerasan | Powered by GitHub Pages</p>
-</footer>
+<div class="content-container">
+    <!-- About Section Card -->
+    <div class="section-card">
+        <h2>👨‍💻 About Me</h2>
+        <p>
+            I am a dedicated Information Systems student who thrives on designing, optimizing, and building systems that directly solve operational complexities. With a strong foundation in database relationships, field documentation, and stakeholder coordination, my goal is to deliver clean, maintainable, and highly effective software platforms.
+        </p>
+    </div>
+
+    <!-- Experience / Projects Card -->
+    <div class="section-card">
+        <h2>🚀 Core Projects & Field Experience</h2>
+
+        <div class="project-block">
+            <h3>Proveya / Jobify</h3>
+            <div class="badge">Startup Sundayag 2025 Innovator</div>
+            <p>A web-based platform targeting employment mismatch and accessibility. Designed to offer structured, fair, and verified job access channels for local job hunters and enterprises alike.</p>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="6b51537a-0c61-4f35-ae49-4c752ad4aaee.jpg" alt="Startup Presentation">
+                    <div class="gallery-caption">Project Pitching</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="ebb74b49-1aef-47e1-b464-8a9f2563cd02.jpg" alt="Team Certificate Presentation">
+                    <div class="gallery-caption">Award Ceremony</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-block">
+            <h3>DMW XI Inventory Management System</h3>
+            <div class="badge">Government Unit Collaboration</div>
+            <p>Developed to modernize property asset tracking mechanics at the Department of Migrant Workers Regional Office XI. Features integrated asset assignment mechanisms with instant PAR and ICS reporting.</p>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="2fadfe57-cdeb-4693-b0a0-e91cd2c2745f.jpg" alt="Field Deployment at DMW Office XI">
+                    <div class="gallery-caption">DMW Regional Office XI</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Technical Capabilities Card -->
+    <div class="section-card">
+        <h2>🛠 Technical Capabilities</h2>
+        <div class="skills-grid">
+            <div class="skill-tag">Systems Analysis & Design</div>
+            <div class="skill-tag">Database Architecture (SQL & ERD)</div>
+            <div class="skill-tag">Python Development</div>
+            <div class="skill-tag">Web Platforms (HTML, CSS, JS)</div>
+            <div class="skill-tag">IEEE Standards Documentation</div>
+            <div class="skill-tag">Agile Development Workflows</div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Ella B. Lerasan. Live Portfolio hosted at <a class="repo-link" href="https://github.com/sarahjeandayagro-oss/ellagithub-portfolio" target="_blank">ellagithub-portfolio</a>.</p>
+    </footer>
+</div>
 
 </body>
 </html>
