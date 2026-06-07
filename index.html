@@ -6,21 +6,21 @@
     <title>Ella B. Lerasan | Portfolio</title>
     <style>
         :root {
-            --bg-color: #f6f8fa;
+            --bg-color: #f0f7f4; /* Soft, clean mint tint */
             --container-bg: #ffffff;
-            --border-color: #d0d7de;
-            --text-main: #24292f;
-            --text-muted: #57606a;
-            --accent-blue: #0969da;
-            --accent-purple: #8250df;
-            --accent-green: #1a7f37;
-            --card-bg: #f8f9fa;
+            --section-bg: #e8f5e9; /* Light green block shading */
+            --border-color: #c8e6c9; /* Soft green borders */
+            --text-main: #1b5e20; /* Deep forest green for text contrast */
+            --text-body: #2e3d30;
+            --accent-emerald: #2e7d32;
+            --accent-mint: #a1dfb1;
+            --card-bg: #f9fbf9;
         }
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
             background-color: var(--bg-color);
-            color: var(--text-main);
+            color: var(--text-body);
             margin: 0;
             padding: 40px 20px;
             line-height: 1.6;
@@ -30,17 +30,17 @@
             max-width: 850px;
             margin: 0 auto;
             background-color: var(--container-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
             padding: 40px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            box-shadow: 0 6px 16px rgba(27, 94, 32, 0.05);
         }
 
         .profile-section {
             display: flex;
             align-items: center;
             gap: 30px;
-            border-bottom: 1px solid var(--border-color);
+            border-bottom: 2px dashed var(--border-color);
             padding-bottom: 30px;
             margin-bottom: 30px;
         }
@@ -59,10 +59,11 @@
         .profile-img-container {
             width: 150px;
             height: 150px;
-            border-radius: 50%;
+            border-radius: 16px; /* Elegant rounded corner instead of circle */
             overflow: hidden;
-            border: 3px solid var(--border-color);
+            border: 3px solid var(--accent-emerald);
             flex-shrink: 0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
         }
 
         .profile-img-container img {
@@ -73,126 +74,135 @@
 
         h1 {
             color: var(--text-main);
-            font-size: 2.2rem;
+            font-size: 2.4rem;
             margin: 0 0 8px 0;
+            font-weight: 800;
         }
 
         h2 {
             color: var(--text-main);
             font-size: 1.4rem;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 8px;
+            border-bottom: 2px solid var(--accent-emerald);
+            padding-bottom: 6px;
             margin-top: 40px;
             margin-bottom: 20px;
+            display: inline-block;
         }
 
         .title-sub {
-            font-size: 1.15rem;
-            color: var(--accent-blue);
+            font-size: 1.2rem;
+            color: var(--accent-emerald);
             font-weight: 600;
             margin: 0 0 12px 0;
         }
 
         .meta-info {
             font-size: 0.9rem;
-            color: var(--text-muted);
+            color: var(--text-body);
+            background-color: var(--section-bg);
+            padding: 8px 14px;
+            border-radius: 6px;
+            display: inline-block;
         }
 
         .meta-info span {
             margin-right: 15px;
-            display: inline-block;
+        }
+
+        .meta-info span:last-child {
+            margin-right: 0;
         }
 
         .project-card {
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
+            border-left: 5px solid var(--accent-emerald); /* Highlight accent bar */
             border-radius: 8px;
             padding: 24px;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
 
         .project-card h3 {
             margin: 0 0 10px 0;
             color: var(--text-main);
-            font-size: 1.2rem;
+            font-size: 1.25rem;
         }
 
         .badge {
             display: inline-block;
             font-size: 0.75rem;
-            font-weight: 600;
-            padding: 4px 10px;
-            border-radius: 20px;
-            background-color: rgba(9, 105, 218, 0.1);
-            color: var(--accent-blue);
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 4px;
+            background-color: var(--accent-emerald);
+            color: #ffffff;
             margin-bottom: 12px;
-        }
-
-        .badge.startup {
-            background-color: rgba(130, 80, 223, 0.1);
-            color: var(--accent-purple);
-        }
-
-        .badge.gov {
-            background-color: rgba(26, 127, 55, 0.1);
-            color: var(--accent-green);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 16px;
-            margin-top: 15px;
+            margin-top: 18px;
         }
 
         .gallery-item {
             border: 1px solid var(--border-color);
-            border-radius: 6px;
+            border-radius: 8px;
             overflow: hidden;
-            background: #fff;
+            background: #ffffff;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
         }
 
         .gallery-item img {
             width: 100%;
-            height: 150px;
+            height: 160px;
             object-fit: cover;
             display: block;
         }
 
         .gallery-caption {
-            padding: 8px;
+            padding: 10px;
             font-size: 0.8rem;
-            color: var(--text-muted);
+            color: var(--text-body);
+            font-weight: 500;
             text-align: center;
+            background-color: var(--card-bg);
             border-top: 1px solid var(--border-color);
+        }
+
+        .skills-grid {
+            margin-top: 15px;
         }
 
         .skill-tag {
             display: inline-block;
-            background-color: #eff1f3;
+            background-color: var(--section-bg);
             border: 1px solid var(--border-color);
             padding: 6px 14px;
             border-radius: 6px;
             font-size: 0.85rem;
             margin-right: 8px;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             color: var(--text-main);
-            font-weight: 500;
+            font-weight: 600;
         }
 
         footer {
             text-align: center;
             margin-top: 50px;
             font-size: 0.85rem;
-            color: var(--text-muted);
-            border-top: 1px solid var(--border-color);
+            color: var(--text-body);
+            border-top: 2px dashed var(--border-color);
             padding-top: 24px;
         }
         
         .repo-link {
-            color: var(--accent-blue);
+            color: var(--accent-emerald);
             text-decoration: none;
-            font-weight: 500;
+            font-weight: 700;
         }
         .repo-link:hover {
             text-decoration: underline;
@@ -212,57 +222,62 @@
                 <span>📚 3rd Year BSIS</span>
             </div>
         </div>
-        <!-- Profile Image: Uses verbatim profile portrait reference -->
         <div class="profile-img-container">
             <img src="ELLA.jpg" alt="Ella B. Lerasan Portrait">
         </div>
     </div>
 
-    <h2>👨‍💻 About Me</h2>
-    <p>
-        I am a dedicated Information Systems student who thrives on designing, optimizing, and building systems that directly solve operational complexities. With a strong foundation in database relationships, field documentation, and stakeholder coordination, my goal is to deliver clean, maintainable, and highly effective software platforms.
-    </p>
+    <div>
+        <h2>👨‍💻 About Me</h2>
+        <p>
+            I am a dedicated Information Systems student who thrives on designing, optimizing, and building systems that directly solve operational complexities. With a strong foundation in database relationships, field documentation, and stakeholder coordination, my goal is to deliver clean, maintainable, and highly effective software platforms.
+        </p>
+    </div>
 
-    <h2>🚀 Core Projects & Field Experience</h2>
+    <div>
+        <h2>🚀 Core Projects & Field Experience</h2>
 
-    <div class="project-card">
-        <h3>Proveya / Jobify</h3>
-        <div class="badge startup">Startup Sundayag 2025 Innovator</div>
-        <p>A web-based platform targeting employment mismatch and accessibility. Designed to offer structured, fair, and verified job access channels for local job hunters and enterprises alike.</p>
-        
-        <div class="gallery-grid">
-            <div class="gallery-item">
-                <img src="6b51537a-0c61-4f35-ae49-4c752ad4aaee.jpg" alt="Startup Presentation">
-                <div class="gallery-caption">Project Pitching</div>
+        <div class="project-card">
+            <h3>Proveya / Jobify</h3>
+            <div class="badge">Startup Sundayag 2025 Innovator</div>
+            <p>A web-based platform targeting employment mismatch and accessibility. Designed to offer structured, fair, and verified job access channels for local job hunters and enterprises alike.</p>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="6b51537a-0c61-4f35-ae49-4c752ad4aaee.jpg" alt="Startup Presentation">
+                    <div class="gallery-caption">Project Pitching</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="ebb74b49-1aef-47e1-b464-8a9f2563cd02.jpg" alt="Team Certificate Presentation">
+                    <div class="gallery-caption">Award Ceremony</div>
+                </div>
             </div>
-            <div class="gallery-item">
-                <img src="ebb74b49-1aef-47e1-b464-8a9f2563cd02.jpg" alt="Team Certificate Presentation">
-                <div class="gallery-caption">Award Ceremony</div>
+        </div>
+
+        <div class="project-card">
+            <h3>DMW XI Inventory Management System</h3>
+            <div class="badge">Government Unit Collaboration</div>
+            <p>Developed to modernize property asset tracking mechanics at the Department of Migrant Workers Regional Office XI. Features integrated asset assignment mechanisms with instant PAR and ICS reporting.</p>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="2fadfe57-cdeb-4693-b0a0-e91cd2c2745f.jpg" alt="Field Deployment at DMW Office XI">
+                    <div class="gallery-caption">DMW Regional Office XI</div>
+                </div>
             </div>
         </div>
     </div>
 
-    <div class="project-card">
-        <h3>DMW XI Inventory Management System</h3>
-        <div class="badge gov">Government Unit Collaboration</div>
-        <p>Developed to modernize property asset tracking mechanics at the Department of Migrant Workers Regional Office XI. Features integrated asset assignment mechanisms with instant PAR and ICS reporting.</p>
-        
-        <div class="gallery-grid">
-            <div class="gallery-item">
-                <img src="2fadfe57-cdeb-4693-b0a0-e91cd2c2745f.jpg" alt="Field Deployment at DMW Office XI">
-                <div class="gallery-caption">DMW Regional Office XI</div>
-            </div>
+    <div>
+        <h2>🛠 Technical Capabilities</h2>
+        <div class="skills-grid">
+            <div class="skill-tag">Systems Analysis & Design</div>
+            <div class="skill-tag">Database Architecture (SQL & ERD)</div>
+            <div class="skill-tag">Python Development</div>
+            <div class="skill-tag">Web Platforms (HTML, CSS, JS)</div>
+            <div class="skill-tag">IEEE Standards Documentation</div>
+            <div class="skill-tag">Agile Development Workflows</div>
         </div>
-    </div>
-
-    <h2>🛠 Technical Capabilities</h2>
-    <div class="skills-grid">
-        <div class="skill-tag">Systems Analysis & Design</div>
-        <div class="skill-tag">Database Architecture (SQL & ERD)</div>
-        <div class="skill-tag">Python Development</div>
-        <div class="skill-tag">Web Platforms (HTML, CSS, JS)</div>
-        <div class="skill-tag">IEEE Standards Documentation</div>
-        <div class="skill-tag">Agile Development Workflows</div>
     </div>
 
     <footer>
