@@ -2,4 +2,4 @@
 
 Welcome to my academic and systems engineering repository. 
 
-👉 **[Click Here to View My Live Portfolio Site](https://sarahjeandayagro-oss.github.io/sarahjeangithub-portfolio/)**
+👉 **[Click Here to View My Live Portfolio Site](https://sarahjeandayagro-oss.github.io/ellagithub-portfolio/)**
