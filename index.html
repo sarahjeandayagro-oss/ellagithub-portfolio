@@ -1,328 +1,204 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ella B. Lerasan | Information Systems Portfolio</title>
-  
-  <style>
-    /* -----------------------------------------
-       GLOBAL COLOR CONFIGURATION (Slate Emerald Palette)
-       ----------------------------------------- */
-    :root {
-      --bg-dark: #1a252c;       /* Deep Slate Steel - Modern dark background */
-      --card-bg: #24343d;       /* Muted Steel - Solid structural containers */
-      --border-line: #3b525e;   /* Border Gray - Clean container framing */
-      --accent-emerald: #52b788;/* Sage Emerald - Vibrant links & interface highlights */
-      --text-header: #f4f7f6;   /* Ice White - High-visibility titles */
-      --text-light: #ffffff;    /* Pure White - Highly readable body copy */
-      --text-muted: #adc178;    /* Soft Olive Tint - Secondary metric notes */
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ella B. Lerasan | Portfolio</title>
+    <style>
+        :root {
+            --bg-color: #0d1117;
+            --container-bg: #161b22;
+            --border-color: #30363d;
+            --text-main: #c9d1d9;
+            --text-muted: #8b949e;
+            --accent-blue: #58a6ff;
+            --accent-purple: #bc8cff;
+            --accent-green: #3fb950;
+        }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { background-color: var(--bg-dark); color: var(--text-light); font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.6; padding: 0 20px; }
-    .container { max-width: 1100px; margin: 0 auto; padding: 20px 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 40px 20px;
+            line-height: 1.6;
+        }
 
-    header { display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 2px solid var(--border-line); margin-bottom: 40px; }
-    header .logo { font-size: 24px; font-weight: bold; color: var(--accent-emerald); text-decoration: none; }
-    header nav a { color: var(--text-light); text-decoration: none; margin-left: 25px; font-weight: 500; }
-    header nav a:hover { color: var(--accent-emerald); }
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            background-color: var(--container-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 40px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+        }
 
-    .hero-section { display: flex; flex-wrap: wrap; gap: 40px; align-items: center; margin-bottom: 60px; }
-    .hero-text { flex: 1; min-width: 300px; }
-    .hero-text h3 { color: var(--accent-emerald); font-size: 14px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; }
-    .hero-text h1 { font-size: 56px; line-height: 1.1; margin-bottom: 15px; color: var(--text-header); }
-    .hero-text h2 { font-size: 20px; font-weight: 400; color: var(--text-muted); margin-bottom: 25px; }
+        .profile-header {
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 24px;
+            margin-bottom: 30px;
+        }
 
-    .btn-group { margin-bottom: 30px; }
-    .btn { display: inline-block; padding: 12px 28px; border-radius: 6px; font-weight: bold; text-decoration: none; cursor: pointer; }
-    .btn-primary { background-color: var(--accent-emerald); color: var(--bg-dark); margin-right: 15px; }
-    .btn-primary:hover { background-color: var(--text-header); box-shadow: 0 4px 15px rgba(82, 183, 136, 0.4); }
-    .btn-secondary { border: 2px solid var(--accent-emerald); color: var(--accent-emerald); }
-    .btn-secondary:hover { background-color: var(--accent-emerald); color: var(--bg-dark); }
+        h1 {
+            color: #ffffff;
+            font-size: 2.2rem;
+            margin: 0 0 8px 0;
+        }
 
-    .tags span { display: inline-block; background-color: var(--card-bg); color: var(--accent-emerald); padding: 6px 14px; border-radius: 20px; font-size: 12px; margin-right: 8px; margin-bottom: 8px; font-weight: 500; border: 1px solid var(--border-line); }
-    .hero-image { flex: 0 0 320px; margin: 0 auto; }
-    .profile-card { background-color: var(--card-bg); padding: 20px; border-radius: 20px; text-align: center; border: 1px solid var(--border-line); }
-    .profile-card img { width: 100%; height: auto; border-radius: 12px; object-fit: cover; margin-bottom: 15px; border: 2px solid var(--border-line); }
-    .profile-card h4 { font-size: 18px; color: var(--text-header); }
+        h2 {
+            color: #ffffff;
+            font-size: 1.4rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 8px;
+            margin-top: 30px;
+            margin-bottom: 16px;
+        }
 
-    .section-title { font-size: 28px; color: var(--text-header); margin-bottom: 10px; }
-    .section-desc { color: var(--text-muted); margin-bottom: 30px; font-size: 15px; }
-    .timeline-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); gap: 25px; margin-bottom: 40px; }
-    .timeline-card { background-color: var(--card-bg); padding: 30px; border-radius: 15px; border: 1px solid var(--border-line); display: flex; flex-direction: column; justify-content: space-between; }
-    .year-badge { display: inline-block; background-color: var(--accent-emerald); color: var(--bg-dark); padding: 4px 12px; font-size: 11px; font-weight: bold; border-radius: 4px; text-transform: uppercase; margin-bottom: 15px; align-self: flex-start; }
-    .timeline-card h3 { font-size: 22px; margin-bottom: 10px; color: var(--text-header); }
-    .timeline-card h4 { font-size: 16px; color: var(--accent-emerald); margin-top: 15px; margin-bottom: 5px; font-weight: 600; }
-    .timeline-card p { color: var(--text-light); font-size: 14px; text-align: justify; margin-bottom: 15px; }
+        .title-sub {
+            font-size: 1.1rem;
+            color: var(--accent-blue);
+            font-weight: 500;
+            margin: 0 0 12px 0;
+        }
 
-    .card-img-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 12px; margin-top: 15px; width: 100%; }
-    .card-img-row img { width: 100%; height: 180px; border-radius: 8px; border: 2px solid var(--border-line); object-fit: cover; }
-    .enterprise-card { background-color: var(--card-bg); padding: 35px; border-radius: 15px; margin-bottom: 50px; border: 1px solid var(--border-line); }
-    .first-year-project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 20px; margin-bottom: 20px; }
-    .project-sub-card { background-color: rgba(0, 0, 0, 0.2); border: 1px solid var(--border-line); border-radius: 10px; padding: 15px; display: flex; flex-direction: column; justify-content: space-between; }
-    .project-sub-card img { width: 100%; height: 180px; border-radius: 6px; margin-bottom: 12px; border: 1px solid var(--border-line); object-fit: cover; }
-    .project-sub-card h5 { color: var(--accent-emerald); font-size: 16px; margin-bottom: 5px; }
-    .project-sub-card p { font-size: 13px; color: var(--text-header); text-align: justify; }
+        .meta-info {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
 
-    .sub-system-box { background-color: var(--bg-dark); padding: 25px; border-radius: 10px; border: 1px solid var(--border-line); }
-    .sub-system-box h5 { font-size: 18px; color: var(--text-header); margin-bottom: 10px; }
-    .sub-system-box p { font-size: 14px; color: var(--text-light); text-align: justify; }
+        .meta-info span {
+            margin-right: 15px;
+        }
 
-    .footer-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); gap: 40px; margin-top: 40px; padding-top: 40px; border-top: 2px solid var(--border-line); }
-    .contact-card { background-color: var(--card-bg); padding: 30px; border-radius: 15px; border: 1px solid var(--border-line); }
-    .contact-card h3 { font-size: 24px; color: var(--text-header); margin-bottom: 5px; }
-    .contact-card h4 { font-size: 18px; margin-bottom: 15px; border-bottom: 1px solid var(--border-line); padding-bottom: 8px; color: var(--text-header); }
-    .contact-item { font-size: 14px; color: var(--text-light); margin-bottom: 12px; }
-    .contact-item a { color: var(--accent-emerald); text-decoration: none; font-weight: 500; }
-    
-    .gallery-title { font-size: 18px; color: var(--text-header); margin-top: 40px; margin-bottom: 15px; }
-    .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-bottom: 40px; }
-    .gallery-grid img { width: 100%; height: 160px; border-radius: 6px; border: 2px solid var(--border-line); object-fit: cover; }
-    footer.bottom-bar { text-align: center; padding: 30px 0; font-size: 13px; color: var(--text-muted); border-top: 1px solid var(--border-line); width: 100%; }
+        .project-card {
+            background-color: rgba(255,255,255,0.02);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 20px;
+            margin-bottom: 16px;
+        }
 
-    @media (max-width: 768px) {
-      .hero-section { flex-direction: column; text-align: center; }
-      .timeline-grid, .footer-container { grid-template-columns: 1fr; }
-      .hero-text h1 { font-size: 40px; }
-    }
-  </style>
+        .project-card h3 {
+            margin: 0 0 8px 0;
+            color: var(--accent-purple);
+            font-size: 1.15rem;
+        }
+
+        .badge {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 3px 8px;
+            border-radius: 20px;
+            background-color: rgba(88, 166, 255, 0.15);
+            color: var(--accent-blue);
+            margin-bottom: 10px;
+        }
+
+        .badge.startup {
+            background-color: rgba(188, 140, 255, 0.15);
+            color: var(--accent-purple);
+        }
+
+        .badge.gov {
+            background-color: rgba(63, 185, 80, 0.15);
+            color: var(--accent-green);
+        }
+
+        .skills-grid {
+            display: block;
+        }
+
+        .skill-tag {
+            display: inline-block;
+            background-color: #21262d;
+            border: 1px solid var(--border-color);
+            padding: 5px 12px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            margin-right: 8px;
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border-color);
+            padding-top: 20px;
+        }
+        
+        .repo-link {
+            color: var(--accent-blue);
+            text-decoration: none;
+        }
+        .repo-link:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
 
-  <div class="container">
-    
-    <header>
-      <a href="#" class="logo">IS Portfolio</a>
-      <nav>
-        <a href="#home">Home</a>
-        <a href="#timeline">Timeline Portfolio</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </header>
-
-    <section class="hero-section" id="home">
-      <div class="hero-text">
-        <h3>Information Systems Student | Systems Analyst</h3>
-        <h1>Portfolio</h1>
-        <h2>Ella B. Lerasan</h2>
-        <p style="color: var(--text-light); font-size: 16px; margin-bottom: 25px; text-align: justify;">
-          A 3rd-year Bachelor of Science in Information Systems student at Davao del Norte State College. 
-          I specialize in analyzing complex technical requirements, formulating structured relational database schemas, and engineering comprehensive software configurations that optimize enterprise operational workflows.
-        </p>
-        
-        <div class="btn-group">
-          <a href="#timeline" class="btn btn-primary">View My Work</a>
-          <a href="#contact" class="btn btn-secondary">Contact Me</a>
+<div class="container">
+    <div class="profile-header">
+        <h1>Ella B. Lerasan</h1>
+        <div class="title-sub">Information Systems Professional & Systems Analyst</div>
+        <div class="meta-info">
+            <span>📍 Davao Region, Philippines</span>
+            <span>🎓 Davao del Norte State College</span>
+            <span>📚 3rd Year BSIS</span>
         </div>
+    </div>
 
-        <div class="tags">
-          <span>Systems Analysis</span>
-          <span>System Developer</span>
-          <span>MySQL / phpMyAdmin</span>
-        </div>
-      </div>
+    <h2>👨‍💻 About Me</h2>
+    <p>
+        I am a dedicated Information Systems student who thrives on designing, optimizing, and building systems that directly solve operational complexities. With a strong foundation in database relationships, field documentation, and stakeholder coordination, my goal is to deliver clean, maintainable, and highly effective software platforms.
+    </p>
 
-      <div class="hero-image">
-        <div class="profile-card">
-          <img src="portfolio/sarah.jpg" alt="Ella B. Lerasan Portrait Frame">
-          <h4>Ella B. Lerasan</h4>
-        </div>
-      </div>
-    </section>
+    <h2>🚀 Core Projects & Field Experience</h2>
 
-    <hr style="border: 0; border-top: 1px solid var(--border-line); margin: 40px 0;">
+    <div class="project-card">
+        <h3>Proveya / Jobify</h3>
+        <div class="badge startup">Startup Sundayag 2025 Innovator</div>
+        <p>A web-based platform targeting employment mismatch and accessibility. Designed to offer structured, fair, and verified job access channels for local job hunters and enterprises alike.</p>
+    </div>
 
-    <section id="timeline">
-      <h2 class="section-title">Outputs from 1st Year to 3rd Year</h2>
-      <p class="section-desc">A systematic log detailing my technical training progress, interactive web developments, and data engineering projects at DNSC.</p>
+    <div class="project-card">
+        <h3>Panabo City Library E-Portal</h3>
+        <div class="badge">Academic Capstone Framework</div>
+        <p>An automated registration engine and statistical utility built to digitize entry, exit, and computer unit workstation allocation workflows using integrated barcode/QR reading capabilities.</p>
+    </div>
 
-      <div class="enterprise-card" style="margin-bottom: 30px;">
-        <span class="year-badge">1st Year Foundations</span>
-        <h2 style="margin-bottom: 10px;">Multimedia Short Films, Desktop Engineering & Early Web Architecture</h2>
-        <p style="margin-bottom: 20px; text-align: justify;">
-          My first year centered on programming logic foundations, desktop UI modeling, introductory computing designs, and digital storytelling projects. I built a dynamic set of projects traversing software engineering and creative multimedia.
-        </p>
+    <div class="project-card">
+        <h3>DMW XI Inventory Management System</h3>
+        <div class="badge gov">Government Unit Collaboration</div>
+        <p>Developed to modernize property asset tracking mechanics at the Department of Migrant Workers Regional Office XI. Features integrated asset assignment mechanisms with instant PAR and ICS reporting.</p>
+    </div>
 
-        <div class="first-year-project-grid">
-          <div class="project-sub-card">
-            <img src="portfolio/6.jpg" alt="Short Film Screenings">
-            <h5>Multimedia Production: LUCID & Part of Your World</h5>
-            <p>
-              Co-directed, filmed, and edited **LUCID**, a short film project that won a *Best Support Artist* award. Also produced **Part of Your World**, a detailed group music video recreation setup.
-            </p>
-          </div>
+    <div class="project-card">
+        <h3>Buzzify</h3>
+        <div class="badge">Commercial Project</div>
+        <p>A web-based digital branding and audience expansion hub custom-tailored to boost localized consumer reach for the Greater RJ Appliance & Trading Corporation.</p>
+    </div>
 
-          <div class="project-sub-card">
-            <img src="portfolio/4.jpg" alt="Diwata Pares Overload Application UI">
-            <h5>Diwata Pares Overload Order System</h5>
-            <p>
-              Designed and programmed a standalone food order system desktop application. Built intuitive food item selection matrix layouts, individual item pricing configurations, and real-time total checkout calculation sheets.
-            </p>
-          </div>
+    <h2>🛠 Technical Capabilities</h2>
+    <div class="skills-grid">
+        <div class="skill-tag">Systems Analysis & Design</div>
+        <div class="skill-tag">Database Architecture (SQL & ERD)</div>
+        <div class="skill-tag">Python Development</div>
+        <div class="skill-tag">Web Platforms (HTML, CSS, JS)</div>
+        <div class="skill-tag">IEEE Standards Documentation</div>
+        <div class="skill-tag">Agile Development Workflows</div>
+    </div>
 
-          <div class="project-sub-card">
-            <img src="portfolio/1.jpg" alt="L&J Pastries Study Hub Layout">
-            <h5>L&J Pastries Study Hub Platform</h5>
-            <p>
-              Engineered a mockup web architecture for an interactive study cafe. Features specialized product grids displaying snacks and drinks alongside designated spatial location blocks mapping quick-access internet connection lounges.
-            </p>
-          </div>
-        </div>
-
-        <div class="first-year-project-grid">
-          <div class="project-sub-card">
-            <img src="portfolio/2.jpg" alt="Programming 1 Java Coding File">
-            <h5>Programming 1: Java Core Final Activity</h5>
-            <p>
-              Embarked on a transformative Java coding journey. Built complex logic handling, data parsing loops, and foundational console workflows while mastering troubleshooting, compilation checking, and source file debugging.
-            </p>
-          </div>
-
-          <div class="project-sub-card">
-            <img src="portfolio/3.jpg" alt="Intro to Computing Vector Graphic">
-            <h5>Introduction to Computing Vector Art</h5>
-            <p>
-              Constructed digital vector illustrations and layout mockups within introductory coursework modules, designing symmetrical robot interfaces and creative celebratory graphical patterns.
-            </p>
-          </div>
-
-          <div class="project-sub-card">
-            <img src="portfolio/5.jpg" alt="Programming 2 Systems Defense">
-            <h5>Programming 2 Final Project System Defense</h5>
-            <p>
-              A culminating programming final project testing advanced object-oriented workflows and interface development. Successfully completed the engineering sprint, testing patterns, and final team presentation defense.
-            </p>
-          </div>
-        </div>
-
-        <h4 style="color: var(--accent-emerald); margin-bottom: 10px;">Local Database Architectures (XAMPP Environment)</h4>
-        <p style="font-size: 14px; text-align: justify; margin-bottom: 15px;">
-          Provisioned local Apache hosting networks and crafted relational database tables. Compiled structural validation constraints and constructed clean entity metrics using target MySQL scripts.
-        </p>
-        <div class="card-img-row" style="grid-template-columns: repeat(2, 1fr);">
-          <img src="portfolio/xamp.jpg" alt="XAMPP Backend Engine Panel">
-          <img src="portfolio/xampp.jpg" alt="phpMyAdmin MySQL Console Workspace">
-        </div>
-      </div>
-
-      <div class="timeline-grid">
-        <div class="timeline-card">
-          <div>
-            <span class="year-badge">2nd Year Milestones</span>
-            <h3>Quantitative Research Poster Showcase</h3>
-            <p>
-              Co-authored, statistically modeled, and formulated a quantitative research project evaluating computing role trends and perceptions at DNSC. Successfully presented and defended the thesis project, securing <b>2nd Place Best Poster Design</b> at the Institute of Computing Symposium.
-            </p>
-            
-            <h4>Code Layout Debugging & HCI</h4>
-            <p>
-              Analyzed underlying stylesheet layouts to master front-end error tracking protocols. Successfully resolved structural alignment flaws, parent container constraints, and complex grid-template boundaries.
-            </p>
-          </div>
-          
-          <div class="card-img-row" style="grid-template-columns: repeat(2, 1fr); gap: 10px;">
-            <img src="portfolio/wom.jpg" alt="Award Winning Quantitative Research Poster">
-            <img src="portfolio/2nd win.jpg" alt="Symposium Certificate of Recognition">
-            <img src="portfolio/debuging.jpg" alt="CSS Troubleshooting Box Model">
-            <img src="portfolio/debug.jpg" alt="Layout Alignment Testing Studio">
-          </div>
-        </div>
-
-        <div class="timeline-card">
-          <div>
-            <span class="year-badge">3rd Year Enterprise Solutions</span>
-            <h3>RentScape: Mobile Property Allocation Platform</h3>
-            <p style="text-align: justify;">
-              Co-engineered an end-to-end mobile application framework designed to automate property discovery, vacancy metrics tracking, and tenant data handling for apartments and boarding systems in Panabo City. Showcased at the <b>Startup Sundayag 2025 Exhibition</b>, receiving formal certification for its exceptional operational design strategy and requirements blueprinting.
-            </p>
-            <ul>
-              <li style="font-size: 13px; color: var(--accent-emerald); margin-bottom: 4px;"><b>System Logic:</b> Enabled custom query filter routing and secure logging tracks.</li>
-              <li style="font-size: 13px; color: var(--accent-emerald);"><b>Technical Layout:</b> Designed stylized multi-page marketing flyers and technical data asset layouts.</li>
-            </ul>
-          </div>
-          
-          <div class="card-img-row" style="grid-template-columns: repeat(3, 1fr); gap: 10px;">
-            <img src="portfolio/rentscape.jpg" alt="RentScape System Launch Flyer Side A">
-            <img src="portfolio/rent.jpg" alt="RentScape System Launch Flyer Side B">
-            <img src="portfolio/scape.jpg" alt="TechSpire Launch Exhibition Stand Space">
-          </div>
-        </div>
-      </div>
-
-      <div class="enterprise-card">
-        <h4 style="font-size: 18px; margin-bottom: 20px; color: var(--text-header); text-transform: uppercase; letter-spacing: 1px;">Active High-Tier System Proposals</h4>
-        
-        <div class="timeline-grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); margin-bottom: 0;">
-          <div class="sub-system-box">
-            <h5>Buzzify: Web Marketing Platform</h5>
-            <p style="margin-bottom: 15px;">
-              A specialized web-based application built to enhance digital marketing workflows and brand visibility metrics for the Greater RJ Appliance & Trading Corporation. Successfully finalized core stakeholder requirements and business logic pitching.
-            </p>
-            <div class="card-img-row" style="grid-template-columns: repeat(2, 1fr);">
-              <img src="portfolio/pitching.jpg" alt="Buzzify Strategic Field Evaluation">
-              <img src="portfolio/out.jpg" alt="Corporate Field Verification Group Session">
-            </div>
-          </div>
-
-          <div class="sub-system-box">
-            <h5>E-Library Portal & Registration</h5>
-            <p style="margin-bottom: 15px;">
-              An automated platform engineered for the Panabo City Library to streamline visitor registration and workstation monitoring. Integrates barcode/QR code authentication paths for fluid analytics reporting.
-            </p>
-            <div class="card-img-row" style="grid-template-columns: repeat(2, 1fr);">
-              <img src="portfolio/library.jpg" alt="Blade System Dashboard Source Code Integration">
-              <img src="portfolio/system.jpg" alt="E-Library Core Application Directory Map">
-            </div>
-          </div>
-
-          <div class="sub-system-box">
-            <h5>DMW XI: Inventory Management System</h5>
-            <p style="margin-bottom: 15px;">
-              An Inventory Management System with Barcode Integration engineered for the Department of Migrant Workers Regional Office XI. Streamlines real-time asset tracking, supply logging, and automated form generation for PAR and ICS.
-            </p>
-            <div class="card-img-row" style="grid-template-columns: repeat(2, 1fr);">
-              <img src="portfolio/2fadfe57-cdeb-4693-b0a0-e91cd2c2745f.jpg" alt="Stakeholder Field Interview Systems Analysis">
-              <img src="portfolio/6b51537a-0c61-4f35-ae49-4c752ad4aaee.jpg" alt="DMW Regional Office XI Deployment Team Group Photo">
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="footer-container" id="contact">
-      <div class="contact-card" style="width: 100%;">
-        <h3>Get In Touch</h3>
-        <h4>Contact & Networks</h4>
-        
-        <div style="margin-top: 20px;">
-          <div class="contact-item"><b>✉️ Email Address:</b> <a href="mailto:ella.lerasan@gmail.com">ella.lerasan@gmail.com</a></div>
-          <div class="contact-item"><b>📍 Location Address:</b> Panabo City, Davao del Norte, Philippines</div>
-        </div>
-        
-        <h4 style="margin-top: 30px;">Professional Channels</h4>
-        <div style="margin-top: 15px;">
-          <div class="contact-item"><b>💼 LinkedIn Account:</b> <a href="#">linkedin.com/in/ella-b-lerasan</a></div>
-          <div class="contact-item"><b>🏫 Institutional Portal:</b> <a href="https://dnsc.edu.ph" target="_blank">Davao del Norte State College</a></div>
-        </div>
-      </div>
-
-      <div>
-        <h3 class="gallery-title" style="margin-top: 0;">Institutional Operations Gallery</h3>
-        <div class="gallery-grid">
-          <img src="portfolio/outline.jpg" alt="System Outline Defense Committee Meeting">
-          <img src="portfolio/defec.jpg" alt="DNSC Institute Library Evaluation Milestone">
-          <img src="portfolio/lib.jpg" alt="Panabo City Library Field Research Evaluation">
-          <img src="portfolio/library.jpg" alt="Greater RJ Appliance Center On-Site Implementation">
-        </div>
-      </div>
-    </section>
-
-    <footer class="bottom-bar">
-      <p>© 2026 Ella B. Lerasan · Developed via Custom HTML Deployment Integration for GitHub Pages</p>
+    <footer>
+        <p>&copy; 2026 Ella B. Lerasan. Viewed via <a class="repo-link" href="https://github.com/sarahjeandayagro-oss/ellagithub-portfolio" target="_blank">ellagithub-portfolio</a>.</p>
     </footer>
-
-  </div>
+</div>
 
 </body>
 </html>
